@@ -161,7 +161,7 @@ export const config: TemplateConfig = {
       "description",
       "logo",
       "photoGallery",
-    
+    "c_Services",
       "yextDisplayCoordinate",
       "hours",
       "slug",
@@ -506,7 +506,7 @@ const Location: Template<ExternalApiRenderData> = ({
     additionalHoursText,
     c_image,
     c_newsPhoto,
-   
+    c_Services,
     logo,
    
   
@@ -740,7 +740,7 @@ const Location: Template<ExternalApiRenderData> = ({
         />
         <About  c_newsPhoto={c_newsPhoto} description={description}></About>
         <OfferSection offer={photoGallery}/>
-        {/* <Storefacility c_ourservice={c_ourservice}></Storefacility> */}
+        <Storefacility c_Services={c_Services}></Storefacility>
         <div className="w-full text-center">
            {/* <DiscoverSection discoverSection={c_discoverSection}/> */}
          
