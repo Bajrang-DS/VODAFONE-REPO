@@ -41,13 +41,13 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
     "");
   let results: any = removeSpecialCharacters.replaceAll(" ", "-");
   if (!result.rawData.slug) {
-    url = `${result.id}`;
+    url = `${result.id}.html`;
   } else {
     url = `${result.rawData.id.toString()}k`;
   }
 
   return (
-    <div className={`location result`} id={`result-${result.id}`}>
+    <div className={`location result`} id={`result-${result.name}`}>
       <div className="relative  w-full">
         <h2  className="onhighLight"><Link eventName="Name" href={`${url}`}>{result.rawData.id}</Link></h2>
         <div className="miles "><span className="icon ">{svgIcons.locationmiles}</span> {metersToMiles(result.distance ?? 0)} mi</div>
