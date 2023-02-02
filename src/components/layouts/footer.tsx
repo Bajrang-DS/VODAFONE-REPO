@@ -27,7 +27,7 @@ const Footer = (props: any) => {
 
                   <li key={index}>
                     <Link eventName={item.label} href={item.link}>
-                      {item.label}
+                     <a href="#">{item.label}</a> 
                     </Link>
                   </li>
                 ))}
@@ -40,7 +40,7 @@ const Footer = (props: any) => {
 
                   <li key={index}>
                     <Link eventName={item.label} href={item.link}>
-                      {item.label}
+                    <a href="#">{item.label}</a>
                     </Link>
                   </li>
                 ))}
@@ -53,7 +53,7 @@ const Footer = (props: any) => {
 
                   <li key={index}>
                     <Link eventName={item.label} href={item.link}>
-                      {item.label}
+                    <a href="#">{item.label}</a>
                     </Link>
                   </li>
                 ))}
@@ -70,7 +70,7 @@ const Footer = (props: any) => {
 
                   <li key={index}>
                    <a > <Link eventName={item.label} href={item.link}>
-                      {item.label}
+                   <a href="#">{item.label}</a>
                     </Link></a>
                   </li>
                 ))}
@@ -82,7 +82,7 @@ const Footer = (props: any) => {
 
                   <li key={index}>
                     <Link eventName={item.label} href={item.link}>
-                      {item.label}
+                    <a href="#">{item.label}</a>
                     </Link>
                   </li>
                 ))}

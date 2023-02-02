@@ -738,9 +738,9 @@ const Location: Template<ExternalApiRenderData> = ({
           additionalHoursText={additionalHoursText}
           hours={hours}
         />
-        {/* <About  c_aboutData={ c_aboutData}></About> */}
-        {/* <OfferSection offer={c_offer}/> */}
-        {/* <Storefacility c_ourservice={c_ourservice}></Storefacility> */}
+        <About  c_newsPhoto={c_newsPhoto} description={description}></About>
+        <OfferSection offer={photoGallery}/>
+        <Storefacility c_ourservice={c_ourservice}></Storefacility>
         <div className="w-full text-center">
            {/* <DiscoverSection discoverSection={c_discoverSection}/> */}
          

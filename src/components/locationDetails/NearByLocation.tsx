@@ -184,25 +184,25 @@ const NearByLocation = (entities: props) => {
 
                 
                   let addressString = "";
-                  let addressLines = e.address?.line1  + e.address?.line2;
+                  let addressLines = e.address?.line1 + e.address?.line2;
 
                   if (addressLines.length > 42) {
                     addressString += e.address?.line1 + "<br/>";
-                    let addressLine = e.address?.line2 + e.address?.city + ", ";
+                    let addressLine = e.address?.line2 + e.address?.city ;
                     if (addressLine.length > 42) {
-                      addressString += e.address?.line2 + ", " + e.address?.city + "<br />";
-                      addressString += e.address?.postalCode + ", " + regionNames.of(e.address?.countryCode);
+                      addressString += e.address?.line2 + e.address?.city + "<br />";
+                      addressString += e.address?.postalCode  + regionNames.of(e.address?.countryCode);
                     } else {
-                      addressString += e.address?.line2 + ", " + e.address?.city + "<br />" + e.address?.postalCode ;
+                      addressString += e.address?.line2  + e.address?.city + "<br />" + e.address?.postalCode ;
                       addressString += regionNames.of(e.address?.countryCode);
                     }
 
                   } else {
                     let line2 = "";
                     if (e.address?.line2 != undefined) {
-                      line2 = ", " + e.address?.line2 + ", ";
+                      line2 = " <br/>" + e.address?.line2 + ", ";
                     }
-                    addressString += e.address?.line1  + line2 + "<br />";
+                    addressString += e.address?.line1 + ", " + line2 + "<br />";
                     addressString += e.address?.city + ", " + e.address?.region + "<br />";
                     addressString += e.address?.postalCode + ", " + regionNames.of(e.address?.countryCode);
                   }
@@ -272,7 +272,7 @@ const NearByLocation = (entities: props) => {
                              <span className="icon">{svgIcons.locatorgetdirectionicon}</span>
                             {" "}
                           
-                            Get direct
+                            Get direction
                           </Link>
                           <Link eventName="DetailPage" className="view-details" href={`/${url}`}>
                             {svgIcons.storeview}{" "}

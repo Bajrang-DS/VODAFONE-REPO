@@ -145,7 +145,7 @@ today = yyyy + '-' + mm + '-' + dd;
                     <div className=" address-sec ">
                       <h2 className="heading">{data.name}</h2>
                       <p>
-                        {data?.address && data.address.line1} {data.address.line2 && "<br />" + data.address?.line2}
+                        {data?.address && data.address.line1}, {data.address.line2 && data.address?.line2}
                         <br /> {data.address?.city && data.address.city},{" "} {data.address?.region && data.address.region}, {" "} <br />
                         {data.address?.postalCode && data.address.postalCode}, {data.address?.countryCode &&  regionNames.of(data.address.countryCode)}
                         <br />
