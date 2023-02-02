@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="62.243" height="76.991" viewBox="0 0 62.243 76.991">
+  <defs>
+    <filter id="Icon_awesome-map-marker" x="0" y="0" width="62.243" height="76.991" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="map1" transform="translate(-1223.594 -801.498)">
+    <g transform="matrix(1, 0, 0, 1, 1223.59, 801.5)" filter="url(#Icon_awesome-map-marker)">
+      <path id="Icon_awesome-map-marker-2" data-name="Icon awesome-map-marker" d="M19.848,57.8C3.107,33.532,0,31.041,0,22.122a22.122,22.122,0,0,1,44.243,0c0,8.919-3.107,11.41-19.848,35.679A2.766,2.766,0,0,1,19.848,57.8Z" transform="translate(9 6)" fill="#fff"/>
+    </g>
+    <g id="well-pharmacy-logo" transform="translate(1241.443 819.12)">
+      <path id="Path_22" data-name="Path 22" d="M8.9,9h-4.2A4.778,4.778,0,0,0,0,13.79a4.693,4.693,0,0,0,4.692,4.692H8.8V9M22.485,9H18.379v9.483h4.106a4.693,4.693,0,0,0,4.692-4.692A4.778,4.778,0,0,0,22.485,9" transform="translate(0 -0.202)" fill="#15aa99"/>
+      <path id="Path_23" data-name="Path 23" d="M18.485,18.281H9.1v4.106a4.692,4.692,0,1,0,9.385,0V18.281M13.792,0A4.693,4.693,0,0,0,9.1,4.692V8.8h9.483V4.692A4.844,4.844,0,0,0,13.792,0" transform="translate(-0.204)" fill="#7fba2a"/>
+      <path id="Path_24" data-name="Path 24" d="M9.1,9h9.483v9.483H9.1Z" transform="translate(-0.204 -0.202)" fill="#009a3a"/>
+    </g>
+  </g>
+</svg>

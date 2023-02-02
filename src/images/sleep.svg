@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16.667" height="16.667" viewBox="0 0 16.667 16.667">
+  <g id="sleep" transform="translate(-282 -828)">
+    <path id="Icon_feather-check" data-name="Icon feather-check" d="M14.542,9,8.669,15.155,6,12.357" transform="translate(280.5 824.5)" fill="none" stroke="#3a356d" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <path id="parking-sign" d="M16.167,2H4.5A2.5,2.5,0,0,0,2,4.5V16.167a2.5,2.5,0,0,0,2.5,2.5H16.167a2.5,2.5,0,0,0,2.5-2.5V4.5A2.5,2.5,0,0,0,16.167,2ZM17,16.167a.833.833,0,0,1-.833.833H4.5a.833.833,0,0,1-.833-.833V4.5A.833.833,0,0,1,4.5,3.667H16.167A.833.833,0,0,1,17,4.5Z" transform="translate(280 826)" fill="#3a356d"/>
+  </g>
+</svg>

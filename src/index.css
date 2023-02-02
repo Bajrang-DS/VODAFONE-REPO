@@ -1,0 +1,974 @@
+@tailwind base;
+@tailwind components;
+
+/* @import url("https://use.typekit.net/uac1nqc.css"); */
+
+
+.overflow-hidden-no{ @apply overflow-hidden}
+*, *:after, *:before{box-sizing: border-box; outline:none !important;}
+html{  scroll-behavior: smooth;}
+body{ font-family: "sofia-pro",sans-serif; @apply   m-0 p-0   text-purple-primary}
+ul{@apply list-none m-0 p-0}
+
+img{ @apply max-w-full h-auto align-middle}
+
+a{ @apply no-underline text-purple-primary }
+a:hover{@apply no-underline}
+
+h1, h2, h3, h4, h5{@apply m-0 }
+
+
+.container-custom-before{ @apply w-full max-w-[1170px]  block mx-auto}
+.container-hadre{ @apply w-full  max-w-[1700px]  block mx-auto}
+.container-custom{ @apply w-full  px-[70px] max-w-[1170px]  block mx-auto} 
+
+.top-strip{ @apply bg-[#f2f2f2] border-b border-[#DCDCDC] }
+.trust-bx{@apply absolute 2xl:-left-12 }
+
+.container-custom-before{ @apply w-full    block mx-auto}
+.container-hadre{ @apply w-full  block mx-auto}
+.container-custom{ @apply w-full px-4 lg:px-[70px]   block mx-auto}
+.header-before{ @apply  hidden xl:flex  text-purple-primary  w-full bg-cover
+    /* bg-gradient-to-r from-purple-primary via-purple-primary to-blue-grad    */
+ flex-wrap flex-row items-center justify-end relative h-[29px]  py-1.5/* px-12*/}
+
+
+.location{@apply flex flex-wrap flex-col sm:flex-row relative w-full xl:w-[calc(100%_-_12px)] p-2.5 xl:p-2.5  bg-[#F5F5F5] hover:bg-[#EFEEFC]  rounded-[5px] mt-5 first:mt-0}
+.location h3{@apply w-full pt-0 text-xl  mb-2.5 pr-8   }
+.location h3 a{@apply transition-all duration-500 hover:opacity-80 }
+.miles{ @apply flex absolute items-center right-0 top-0}
+.miles .icon{ @apply mr-2}
+
+
+
+
+
+
+
+
+/* Banner Cta button */
+.ctaBtn{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  background-color: #bb1919;
+  color: #eee7e7;
+  font-size: 16px;
+  padding: 4px 21px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+
+
+
+
+/*  */
+
+/* header */
+
+body.menu-opened{
+  @apply overflow-hidden lg:overflow-auto;
+}
+
+
+.menu-opened .hdr-right ul{
+  @apply right-0
+}
+.menu-opened .menu-btn{  @apply border-[#d9d9d9]}
+.menu-opened{  @apply overflow-hidden lg:overflow-visible}
+
+.menu-opened .navigation ul.main-nav{  @apply right-0}
+
+.menu-btn{  @apply w-11 h-[61px] border-l border-transparent absolute right-2 top-6 lg:hidden;}
+.menu-opened .menu-btn{  @apply border-[#d9d9d9]}
+.menu-btn span, .menu-btn span:after, .menu-btn span:before{  @apply absolute w-[25px] h-[3px] bg-purple-primary block content-[''] right-0;}
+.menu-btn span:after{  @apply transition-all ease-in-out duration-200 -bottom-[7px] ml-0;}
+.menu-btn span:before{  @apply transition-all ease-in-out duration-200 -top-[7px] ml-0;}
+.menu-opened .menu-btn span{  @apply bg-transparent;}
+.menu-opened .menu-btn span:before{  @apply transform rotate-45 top-0 bg-purple-primary;}
+.menu-opened .menu-btn span:after{ @apply transform -rotate-45 bottom-0 bg-purple-primary;}
+
+.menu-opened .menu-btn span{
+  @apply bg-transparent;
+}
+.menu-opened .menu-btn span:before{
+  @apply transform rotate-45 top-0 bg-purple-primary;
+}
+.menu-opened .menu-btn span:after{
+  @apply transform -rotate-45 bottom-0 bg-purple-primary;
+}
+
+
+
+.navigation ul.main-nav{
+  @apply flex flex-col lg:flex-row fixed lg:relative -right-full lg:right-auto top-[120px] lg:top-auto bottom-0 lg:bottom-auto bg-white lg:bg-transparent z-50 lg:z-auto w-full lg:w-auto max-w-full sm:max-w-full lg:max-w-none overflow-x-hidden overflow-y-auto lg:overflow-visible transition-all ease-in-out duration-200 lg:-ml-2.5;
+}
+.menu-opened .navigation ul.main-nav{
+  @apply right-0
+}
+.navigation ul.main-nav > li{
+  @apply lg:border-r border-white;
+}
+.navigation ul.main-nav > li > a{
+  @apply pr-6 border-b border-b-[#d9d9d9] lg:border-b-0 w-full after:content-none lg:after:content-[''] after:border-t-4 after:border-t-white after:border-l-4 after:border-l-transparent after:border-r-4 after:border-r-transparent after:absolute after:top-1/2 after:right-2.5 after:-mt-0.5;
+}
+.navigation ul.main-nav a{
+  @apply text-[#333] lg:text-purple-primary font-semibold lg:font-normal text-base px-5 lg:px-2.5 leading-[22px] uppercase relative inline-block align-middle;
+}
+.navigation .social-links li:last-child{
+  @apply mr-0;
+}
+.navigation .submenu{
+  @apply lg:absolute lg:top-full lg:left-0 lg:z-10 lg:bg-[#09093e] lg:w-[225px] transition-all duration-300 lg:max-h-0 overflow-hidden;
+}
+.navigation ul.main-nav > li:last-child .submenu{
+  @apply left-auto right-0;
+}
+.navigation ul.main-nav > li:hover .submenu{
+  @apply max-h-60;
+}
+.navigation .submenu a{
+  @apply w-full lg:hover:bg-[#060628] border-b border-b-[#d9d9d9] lg:border-b-0 w-full;
+}
+.navigation ul.main-nav .submenu a{
+  @apply pl-10 lg:pl-5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.header-sec{@apply  xl:relative z-10 flex flex-wrap flex-col justify-center bg-white pb-2 }
+.header-before{ @apply  hidden xl:flex  text-purple-primary  w-full bg-cover
+  /* bg-gradient-to-r from-purple-primary via-purple-primary to-blue-grad    */
+flex-wrap flex-row items-center justify-end relative h-[29px]  py-1.5/* px-12*/}
+.header-before nav{ @apply flex-1 block mr-0 }
+.menu{ @apply flex flex-wrap justify-end  items-center p-0}
+
+.menu li{ @apply text-[#154259] text-xs px-3 last:pr-0 }
+.menu li span{ @apply font-semibold}
+
+.menu li a{ @apply  text-[#154259]  text-xs}
+.menu li.menu-item--icon{@apply after:hidden }
+.menu li.menu-item--icon a {  @apply bg-[url('./images/account.svg')] w-[14px] h-[14px] text-[0]  leading-[0] block relative top-[1px]}
+.language{@apply pr-7  }
+
+
+
+.trust-bx{@apply absolute 2xl:-left-12 }
+
+.header-sec{@apply flex flex-wrap flex-col justify-center     pb-1.5 /*pl-[70px]*/ bg-white xl:relative z-10  }
+.logo{@apply text-center mt-4 lg:mt-[37px] mb-6 }
+.logo img { @apply mx-auto   relative z-10}
+
+.hdr-right {  @apply static w-auto overflow-visible block   }
+.hdr-right ul { @apply flex  flex-wrap justify-center flex-row items-center} 
+
+.hdr-right ul li{ @apply flex last:text-white  w-full lg:w-auto flex-wrap flex-row items-center text-sm  text-center leading-4} 
+.hdr-right ul li a{@apply p-4  text-[#bd1508]  text-base   flex   flex-wrap flex-row leading-[1.2rem]  items-center  justify-between}
+.hdr-right ul li a svg{@apply w-2.5 h-2.5 ml-2 }
+
+.nav-dropdown-main { @apply relative}
+
+
+
+.food-list{
+  @apply pt-5 pb-0 lg:pt-14 lg:pb-10;
+}
+.food-list.center-4 .splide__arrows{
+  @apply xl:hidden
+} 
+.food-list.center-4 .splide__list{
+  @apply xl:justify-center
+}
+
+.food-list .splide li{
+  @apply px-0 sm:px-[15px];
+}
+.food-list .splide .slide-img{
+  @apply inline-block w-full h-0 pt-[100%] overflow-hidden relative rounded-2xl my-5 shadow-[0px_0px_16px_rgba(1,1,1,0.18)] transition-all duration-200 ease-in-out;
+}
+.food-list .splide li:not(.is-active) .slide-img{
+  @apply transform scale-90 sm:scale-100 opacity-50 sm:opacity-100 bg-white;
+}
+.food-list .splide .slide-img img{
+  @apply w-full h-full object-contain object-center absolute top-0 left-0 transition-all duration-300 scale-100 hover:scale-105 px-5 pb-10;
+}
+.food-list .splide h4{
+  @apply absolute bottom-0 left-0 w-full bg-blue-grad text-white text-center font-semibold text-sm sm:text-base uppercase py-3 transition-all duration-300;
+}
+
+.splide .splide__arrows .splide__arrow{
+  @apply w-10 h-10 transition-all bg-pink-primary disabled:bg-[#FBE8E6] lg:bg-[#FBE8E6] lg:hover:bg-pink-primary hover:opacity-100 opacity-100 disabled:opacity-70 disabled:hover:bg-[#FBE8E6]; 
+}
+.splide .splide__arrows .splide__arrow.splide__arrow--next{
+  @apply right-8 sm:right-1 md:-right-0.5 2xl:-right-1;
+}
+.splide .splide__arrows .splide__arrow.splide__arrow--prev{
+  @apply left-8 sm:left-1 md:-left-0.5 2xl:-left-1;
+}
+.splide .splide__arrows .splide__arrow svg{
+  @apply fill-white lg:fill-purple-primary;
+}
+.splide .splide__arrows .splide__arrow:disabled:hover svg{
+  @apply lg:fill-purple-primary;
+}
+.splide .splide__arrows .splide__arrow:disabled svg{
+  @apply fill-purple-primary
+}
+.splide .splide__arrows .splide__arrow:hover svg{
+  @apply lg:fill-white;
+}
+/*Header nav*/
+.top-nav{ @apply  bg-location-card-bg-hover w-full  inline-block}
+.top-nav ul{ @apply flex  justify-end }
+.top-nav ul li{ @apply text-white mx-1 py-1 }
+.top-nav ul li a{ @apply text-white  p-2 text-[13px] }
+.logo{@apply text-center inline-block w-full pt-10 pb-4 }
+.logo img{ @apply max-w-[265px] inline-block}
+
+
+
+.navbar{ @apply w-full mt-1}
+.navbar ul{@apply flex flex-wrap justify-between items-center  }
+.navbar ul li{@apply px-2  py-5 border-b border-grey hover:border-b  }
+.navbar ul li a{@apply text-lg font-bold font-Encode-Sans}
+
+
+
+
+
+
+
+
+/* hero css */
+
+
+.serive-text{@apply text-[#FF0000]}
+
+.header-title{@apply bg-hero-banner bg-cover  bg-center bg-no-repeat  inline-block  w-full align-bottom backdrop-blur-sm  text-white text-center py-[4.6rem]  mb-5}
+.header-title h1{@apply text-[38px]   mb-2 leading-none xl:pl-[55px]  }
+.header-title p{@apply text-[15px] xl:pl-[55px]  leading-[1.4rem] max-w-[800px] !mx-auto  }
+
+.locator-find-block{ @apply  inline-block rounded-lg backdrop-blur-sm bg-white/30 mx-auto w-[340px] sm:w-[510px] pr-5}
+.right-block{@apply w-full  xl:w-[calc(100%_-_580px)] 2xl:w-[calc(100%_-_676px)] pr-2.5 }
+
+.locator-find-block h2{@apply text-xl pt-[14px] leading-[30px]   text-center}
+.locator-find-block .current-location{ @apply border-none mr-0.5 pt-0  bg-none p-0 text-[13px] float-right leading-[23px] } 
+.locator-find-block .current-location svg{@apply inline-block -mt-1.5 mr-2 }
+.search-form{ @apply relative inline-block w-full text-[#9c9c9c] }
+.search-form input{@apply rounded-[60px] w-full bg-gray-light h-12 text-[#9c9c9c]  py-2 pr-8 sm:py-4 sm:pr-20 pl-4 leading-7  text-[13px]   border-none }
+.search-form .cus_btn{ @apply absolute top-[7px] right-4 py-2.5 text-white   rounded-full bg-pink-primary   px-2.5 }
+
+.ps__rail-y:hover > .ps__thumb-y, .ps__rail-y:focus > .ps__thumb-y, .ps__rail-y.ps--clicking .ps__thumb-y { @apply !bg-purple-primary !w-1.5}
+.ps__thumb-y{ @apply !bg-purple-primary !w-1.5}
+
+
+/* left listing */
+.scrollbar-container{@apply !h-[calc(100vh_-_16.875rem)] overflow-x-hidden overflow-y-auto}
+.ReactModal__Content--after-open{ @apply !rounded-xl}
+.ReactModalPortal button{ @apply hidden }
+.row{ @apply flex flex-wrap my-0 -mx-2.5}
+.popup-title{ @apply text-3xl text-center mb-6 border-b border-[#DFDFDF]  font-semibold text-purple-primary }
+.closeButton{ @apply absolute right-2 cursor-pointer top-3}
+.left-block-locator{ @apply w-full order-2 xl:order-none xl:w-[513px]   px-2.5}
+.right-block-locator{@apply w-full order-none h-4/5 xl:order-2 xl:w-[calc(100%_-_513px)] pr-2.5 pl-[5.65px]}
+.ReactModal__Overlay{@apply !bg-black bg-opacity-70 !z-[999]}
+
+.location .location-info{@apply w-full}
+.location .location-info .icon-row{@apply  flex flex-wrap w-full relative pl-12 items-center min-h-[28px]  mb-2.5 first:mt-2 text-sm}
+.location .location-info .icon-row .icon{@apply absolute top-[2px] left-[3px] w-9 h-9 flex items-center  justify-center bg-[#fff] rounded-[30px]}
+.google-review{@apply mt-2.5 mb-0.5 }
+
+
+.miles{ @apply flex absolute items-center right-0 top-0}
+.miles .icon{ @apply mr-2}
+.hours-sec{ @apply w-full relative }
+.location .location-info .open-close .miles{@apply ml-auto xl:pt-[7px]   absolute right-6 sm:right-0 top-0 pl-8 leading-7 text-sm xl:text-xs 2xl:text-sm   xl:whitespace-nowrap 2xl:whitespace-normal  }
+.location .location-info .open-close .miles .icon{@apply absolute top-[0px] xl:top-[3px]  left-0 w-6 h-6   flex items-center justify-center  bg-purple-primary  rounded-[30px]}
+
+.location .location-info .open-close{ @apply flex items-start   flex-row justify-between pl-0  sm:pl-0 md:pl-0 xl:pl-0 2xl:pl-0  leading-7}
+.location .location-info .open-close .OpenCloseStatus{@apply pr-5 pl-0   w-[300px]   relative   xl:pr-4 2xl:pr-5 border-none text-purple-primary  text-sm xl:text-xs 2xl:text-sm } 
+
+
+.active.daylist{ @apply  !block pl-[50px]}
+.OpenCloseStatus .daylist{@apply hidden}
+
+
+
+.hours-labels{@apply  flex items-center text-green-dark cursor-pointer p-2 xl:p-0 2xl:p-2  text-left outline-none  leading-6 transition-all delay-500}
+.hours-labels { @apply  flex items-center text-green-dark cursor-pointer p-2 xl:p-0 2xl:p-2  text-left outline-none  leading-6 transition-all delay-500 }
+.hours-labels a{ @apply ml-0}
+
+/* .hours-labels svg{ @apply ml-2} */
+
+.OpenCloseStatus .current{@apply bg-purple-primary text-white pl-[px] xl:pl-[8px] rounded-sm  }
+
+/* pagination */
+nav[aria-label="Pagination"] button{ 
+  @apply rounded-none text-purple-primary    border-pagination-button
+}
+nav[aria-label="Pagination"] button:hover, nav[aria-label="Pagination"] button.bg-primary-light{
+  @apply bg-pagination-button text-white
+}
+nav[aria-label="Pagination"] button:disabled{
+  @apply cursor-not-allowed text-opacity-60 bg-opacity-60 hidden
+}
+
+.pagination-bottom{ @apply mt-4}
+
+.store-link{ @apply flex  gap-4 justify-center w-full  }
+.store-link a{@apply py-[5px]  rounded-md cursor-pointer leading-4 sm:leading-8 w-full min-h-[38px] sm:w-[70%]  m-2 border fill-purple-primary   transition-all transform hover:scale-[1.04] hover:bg-dark_red hover:text-white border-dark_red hover:border-none  bg-transparent text-xs sm:text-sm xl:text-xs 2xl:text-sm uppercase font-medium flex items-center justify-center }
+.store-link a img{@apply mr-2.5}
+.store-link a svg{@apply mr-2.5 last:ml-2.5}
+.store-link a:hover svg{ @apply !fill-white }
+
+.store-link a.direction{@apply  transition-all transform hover:scale-[1.04]}
+
+
+.store-link a{
+  @apply inline-flex align-top justify-center items-center py-2 px-2 font-semibold;
+}
+
+.store-link .call-store{
+  @apply w-[calc(50%_-_5px)] xl:w-[188px] bg-[#cbb081] hover:bg-[#cbb081] text-white rounded ml-2.5 md:ml-0 transition-all duration-300;
+}
+.store-link a svg{
+  @apply mr-1.5 w-4 md:w-auto fill-purple-primary;
+}
+.store-link .call-store svg{
+  @apply h-[15px]
+}
+
+
+
+
+
+
+
+
+
+/* active class add */
+.current {
+  @apply bg-pink-primary
+  
+}
+/* end */
+
+/* filter */
+.ReactModal__Body--open{
+  @apply overflow-hidden
+}
+.ReactModal__Content{
+  @apply max-w-[94%] md:max-w-3xl w-full max-h-[80%] !mr-0
+}
+.ReactModal__Overlay{
+  @apply  bg-opacity-80
+}
+.ReactModal__Content > div > div{
+  @apply flex flex-wrap w-full
+}
+.ReactModal__Content > div > div > div{
+  @apply pr-2.5 !mt-0 !mb-2 w-full sm:w-1/2 md:w-1/3
+}
+/* .ReactModal__Content > div > button{
+  @apply font-title-text-font
+} */
+.ReactModal__Content > div > button > div{
+  @apply  text-lg
+}
+.ReactModal__Content > div > div .form-input{
+  @apply col-span-3 rounded-none border py-2.5 px-4 h-auto leading-5
+}
+.ReactModal__Content > div > div > button{
+  @apply border   px-3.5 py-2.5 capitalize w-full text-base
+}
+.h-px{
+  @apply border-b 
+}
+.ReactModal__Overlay.ReactModal__Overlay--after-open:after{
+  @apply content-[''] w-7 h-7 leading-none absolute top-3.5 right-3.5 text-white text-4xl font-normal  bg-[length:24px_24px] bg-no-repeat bg-center cursor-pointer
+}
+/* end */
+
+
+/* details page css start here */
+
+
+/* --------------------------------------------
+Location information
+-----------------------------------------------*/
+
+.ab-secmain{@apply bg-[#fafafa] py-4  }
+.about-sec{ @apply !p-8 inline-block rounded-lg backdrop-blur bg-white/30 lg:-ml-16 w-[340px] sm:w-[580px] 2xl:w-[676px] px-2.5 }
+.about-sec h2{@apply text-2xl text-purple-primary font-semibold leading-tight mb-5 after:content-[''] after:w-16 after:h-1 after:bg-black after:block after:mt-2.5}
+.about-sec p{@apply text-base   text-[#575757] }
+
+
+
+.icon-dtl{@apply absolute -top-1 left-[3px] w-9 h-9 flex items-center  justify-center bg-[#EFEFEF] rounded-[30px]}
+ .store-phone p{ @apply leading-8} 
+ .store-phone p a{
+  @apply relative
+} 
+/* .store-phone p a:after{
+  @apply content-[''] absolute -bottom-1 left-0 w-0 transition-all duration-500 border-b;
+} */
+.store-phone p a:hover:after{
+  @apply w-full
+}
+.store-phone .icon-dtl svg {@apply w-4 relative}
+.store-address .icon-dtl svg {@apply w-4 relative top-0}
+.services-list{ @apply flex flex-wrap}
+.services-list .slebx{ @apply flex w-1/2 mt-1}
+.services-list .slebx img{ @apply mr-1}
+.heading{ @apply !text-2xl font-semibold}
+.heading a{ @apply !text-purple-primary !text-2xl font-semibold}
+.address-sec p{ @apply !text-[#3D3935]}
+.location_details .store-address{ @apply pl-5 md:pl-12}
+.location_details .store-phone{ @apply pl-5 md:pl-12}
+
+
+.splide__arrow{ @apply  !bg-[#ccc] } 
+
+
+.centered-container {
+  @apply mx-auto px-5 md:px-14 max-w-screen-xl;
+}
+
+.section { @apply mt-8 mb-16;}
+
+
+abbr:where([title]) {
+  text-decoration: none;
+}
+
+/* scrollbar */
+.result.active{
+  @apply bg-[#e2e8f0]; 
+}
+/* end */
+
+
+.storelocation-category{ @apply px-2 w-1/2 sm:w-1/3 lg:w-1/4 xl:w-1/4 2xl:w-1/4 p-4  }
+.storelocation-category a{ @apply  justify-center flex border border-[#eee] p-4 w-full rounded-xl transition-all transform hover:scale-[1.05] hover:bg-dark_red hover:text-white  }
+/* --------------------------------------------
+Near by
+-----------------------------------------------*/
+.nearby-sec{ @apply pt-[3.125rem] pb-[1.875rem]}
+.near-location .buttons{@apply justify-start  }
+.near-location .button{@apply  hover:text-white }
+
+.location-information{ @apply pt-6 lg:pt-9 pb-5 lg:pb-[34px];}
+
+.boxes{
+  @apply flex flex-wrap -mx-[15px] sm:-mx-2.5 lg:-mx-[15px];
+}
+.boxes .location_details{
+  @apply flex flex-wrap w-full xl:w-[730px]}
+ .box{
+  @apply px-[15px] sm:px-2.5 lg:px-[15px];
+}
+.box.store-info{  @apply w-full md:w-[370px] lg:w-1/2 xl:max-w-[20.875rem] xl:w-full ;}
+.box.store-info .inner-box{ @apply bg-white }
+.box.store-timing{
+  @apply w-full md:w-[calc(100%_-_370px)] lg:w-1/2 xl:max-w-[24.625rem] xl:w-full mt-2.5 md:mt-0;
+}
+
+.box.store-timing table{@apply w-full  }
+.store-timing table tr td{@apply py-2 }
+.store-timing table tr td span>span{@apply my-3 px-1 py-1 bg-running-color bg-opacity-10 }
+.selected td:last-child span>span{ @apply bg-purple-primary bg-opacity-30 p-1}
+
+.box.store-social{
+  @apply w-full  ;
+}
+.box.map-info{
+  @apply w-full  xl:w-[calc(100%_-_730px)];
+}
+.box .inner-box{
+  @apply bg-black bg-opacity-[0.02] p-[15px] md:p-4 h-full ;
+}
+.box.map-info .inner-box{
+  @apply pt-[64%] md:pt-0 h-0 md:h-96 xl:h-full p-0 relative ;
+} 
+.box h4{
+  @apply border-b-2  pb-0 md:pb-2 md:mb-5;
+} 
+.box p{
+  @apply text-pink-primary  ;
+} 
+.store-address{
+  @apply relative pl-5 md:pl-9 mb-4 min-h-[34px] flex items-center flex-wrap;
+}
+.store-address h2{
+  @apply  text-base leading-6 m-0 p-0;
+}
+.store-address svg{
+  @apply absolute top-0 md:top-1 left-0 w-3.5 md:w-auto;
+}
+
+.store-phone{
+  @apply relative pl-5 md:pl-9 mb-6 inline-block w-full align-top;
+}
+.store-phone a{
+  @apply  transition-all duration-300 hover:underline text-black
+} 
+ /* .store-phone svg{
+  @apply absolute top-0 left-0 w-3.5 md:w-auto;
+} */
+
+
+
+.hours{ @apply w-full;}
+.hours .time-row{  @apply flex flex-row w-full justify-between first:font-semibold first:uppercase leading-9 pl-9 pr-1.5;}
+.hours .time-row .day{  @apply w-[calc(100%_-_12rem)] lg:w-[calc(100%_-_256px)];}
+.hours .time-row .store-time{  @apply w-24 lg:w-32;}
+.hours .time-row .delivery-time{  @apply w-24 lg:w-32;}
+.hours .time-row.currentDay{  @apply text-white bg-blue-grad relative before:w-3.5 before:h-2 before:border-l-2 before:border-l-white before:border-b-2 before:border-b-white before:transform before:-rotate-45 before:absolute before:top-3 before:left-2.5;
+}
+
+.box.store-social .inner-box{  @apply bg-[#007a53] flex items-center justify-between py-2}
+.box.store-social h4{  @apply m-0 p-0 border-0 text-white}
+.box.store-social .social-links{  @apply flex;}
+.box.store-social .social-links li{  @apply mr-0 ml-4 md:ml-6 first:ml-0;}
+.box.store-social .social-links li a{  @apply w-auto h-auto}
+.box.store-social .social-links li a svg{  @apply h-5}
+.image{width:100%;}
+
+/* banner */
+.hero{
+  @apply relative pt-4 md:pt-8 pb-[34px] md:pb-12 z-0 text-white text-sm lg:text-2xl font-semibold lg:font-normal after:absolute after:top-0 after:left-0 after:bottom-0 after:right-0 after:bg-black after:bg-opacity-60 after:-z-[1];
+}
+.hero .hero-img{
+  @apply absolute top-0 left-0 w-full h-full object-cover object-left -z-[1];
+}
+.hero p{
+  @apply my-2
+}
+.hero .cta_btn{
+  @apply mt-6
+}
+.hero .cta_btn .button{
+  @apply bg-white text-dark_red text-base hover:bg-dark_red hover:text-white leading-8
+}
+footer.footer-sec{  @apply bg-[#F87171]  text-[#fff8f0] mt-8}
+.refrace-bx{   @apply bg-[#002A2F] w-full pb-4  text-[#fff8f0]}
+.refrace-bx h4{ @apply  relative font-medium text-center top-0 tracking-[2.5px] pt-[22px] text-xs after:bg-[url('./images/arrow-down-shallow-white.svg')] after:absolute  after:w-[13px] after:rotate-0 after:h-2.5 after:top-6 after:ml-2 
+   }
+.reference-accordion { @apply  text-white cursor-pointer  w-full  outline-none  transition-all delay-500 }
+.reference-accordion.active{ @apply  text-white after:rotate-180  }
+.reference-panel {  transition: max-height 0.2s ease-out;   @apply  bg-transparent max-h-0 overflow-hidden  w-full }
+.refrace-bx p{  @apply pb-8 first:pt-10 text-sm }
+
+.newssocial-sec{  @apply flex flex-col sm:flex-row justify-between items-center pt-6 }
+.newsletter-form{   @apply flex flex-row}
+.newsletter-form input{@apply border-none text-base h-[55px] py-2.5 px-3 text-[#9c9c9c]  w-full  border-2  border-[#ccc] rounded-sm }
+.newsletter-form button{@apply w-48   text-[15px]  h-[55px]    m-0 ml-4 uppercase rounded-full text-white bg-[#e36293]}
+.social-bx { @apply mt-4 sm:mt-0}
+
+.flex-inner{ @apply flex  items-center flex-row py-2.5 px-0 text-sm }
+.flex-inner span{   @apply bg-[#043b41]  text-white rounded-[50px] min-w-[30px] h-[30px]  inline-block text-center leading-8 mr-4}
+
+
+
+.refrace-bx ul{  @apply flex flex-row  flex-wrap text-[#fff8f0] mt-1.5  }
+.refrace-bx ul li{@apply w-full lg:w-1/2 xl:pr-2}
+
+
+.footer-sec2{ @apply text-center mt-5 w-full text-white}
+.footer-sec2 h4{ @apply text-[30px] text-center py-0.5 px-0 }
+.footer-sec2 p{ @apply text-sm text-center leading-7  }
+
+.footer-sec2 hr{ @apply my-[30px] mx-0 opacity-30}
+
+.footer-sec-copyright{ @apply mt-[30px] pb-5 flex flex-row flex-wrap }
+
+.store-finder-sec{@apply flex items-center justify-center lg:justify-start  mb-3 text-base font-semibold}
+.store-finder-sec .store-img{@apply mr-2 }
+.store-finder-sec .store-img img{@apply max-w-[23px]}
+.store-finder-sec span{@apply w-full block text-sm font-normal }
+
+.trust-footer{@apply mb-1 }
+.trust-footer img{ @apply mx-auto}
+
+
+
+
+
+
+.footer-site-info{@apply w-full text-center pb-5   text-[13px] text-white}
+.footer-site-info p{ @apply mt-2}
+.footer-site-info ul{@apply w-full flex justify-center items-center }
+.footer-site-info ul li{@apply  text-[13px] mx-2 }
+.footer-site-info ul li a{@apply text-[13px] text-[white] }
+
+
+
+
+
+
+.footer-bx{ @apply w-full text-center lg:text-left lg:w-1/4 lg:pl-12 lg:first:pl-0 xl:pl-0 xl:w-[28%] last:xl:w-[15%]}
+.footer-bx.company{@apply order-4 mt-4 lg:order-none }
+.footer-social{  @apply flex flex-row items-center justify-center xl:mr-auto xl:w-[310px]}
+.footer-social li{ @apply my-0 mx-4 transition-all transform hover:scale-[1.09]}
+.footer__bottom__copyright{@apply mt-2  text-sm }
+.footer-link ul{@apply pl-0 xl:pl-0}
+.footer-link ul li{ @apply py-1.5 px-0}
+.footer-link ul li a{  @apply   text-[white]   text-base   transition-all transform hover:opacity-50  }
+.footer__bottom { @apply text-center pb-2.5   xl:mr-auto xl:w-[310px]}
+.footer__bottom svg  {  @apply w-14 h-[58px] inline-block}
+
+
+.breadcrumb ul{
+  @apply flex flex-wrap md:flex-row items-center leading-5 md:leading-10 text-[10px] md:text-sm pt-2 pb-2 md:py-0;
+}
+.breadcrumb ul li{
+  @apply align-middle text-black font-medium md:font-normal;
+}
+.breadcrumb ul li svg{
+  @apply w-3 md:w-5
+}
+.breadcrumb ul li a{
+  @apply inline-flex items-center min-h-[20px] md:h-10 align-top text-black hover:underline after:w-1 after:md:w-1.5 after:h-1 after:md:h-1.5 after:transform after:rotate-45 after:border-r after:border-t after:mx-1 after:md:mx-2.5 after:border-black transition-all duration-300; 
+}
+.breadcrumb ul li.breadcrumbcity{
+  @apply inline-flex items-center min-h-[20px] md:h-10 align-top text-[#2f464a]  after:w-1 after:md:w-1.5 after:h-1 after:md:h-1.5 after:transform after:rotate-45 after:border-r after:border-t after:mx-1 after:md:mx-2.5 after:border-black;
+}
+
+
+
+
+
+
+
+.open-heading{ @apply text-center w-full} 
+.open-heading p{@apply !text-2xl font-semibold}
+/*---------------------------------------------
+store fac Sec
+-----------------------------------------------*/
+.store-faci{@apply text-center w-full }
+.store-faci h2{@apply font-bold text-2xl   }
+.store-faci .boxes-row{@apply flex justify-center mb-10}
+.store-faci .boxes-fac{@apply w-full flex items-center mx-9 first:ml-0 last:mr-0 rounded flex-col md:w-1/2 lg:w-[11.875rem] px-8 justify-center  }
+.store-faci .boxes-fac .img-item{@apply  items-center flex justify-center  rounded-full p-4 w-[85px] h-[85px]}
+.store-faci .boxes-fac img{@apply w-32 h-12  }
+.store-faci .boxes-fac h3{@apply mt-2 font-medium  }
+
+
+/* holiday popup */
+.pop-up-holyhrs{@apply flex flex-row justify-around border border-b-0 last:border-b  p-2}
+.holytime-sec{@apply w-48 flex justify-evenly}
+.spac-bx{@apply w-8 text-center}
+.op-time{@apply w-8 }
+.cl-time{@apply w-8 }
+.days-sec{@apply w-8}
+
+
+
+/*  */
+
+/* --------------------------------------------
+Nearby Sec
+-----------------------------------------------*/
+.nearby-sec{
+  @apply pt-5 pb-5 lg:pt-14 lg:pb-10 overflow-hidden;
+}
+.nearby-sec .splide li{
+  @apply px-[15px] sm:px-11 xl:px-[15px];
+}
+.nearby-sec .near-location{
+  @apply p-4 lg:p-6 2xl:p-8 h-[calc(100%_-_2.5rem)] rounded-2xl shadow-[0px_0px_10px_rgba(1,1,1,0.18)] xl:shadow-[3.5px_6.06px_21px_rgba(1,1,1,0.18)] my-5 transition-all duration-300 transform scale-100 xl:hover:scale-105 z-0 relative;
+}
+.nearby-sec .near-location h4{
+  @apply  font-semibold text-base md:text-[17px] lg:text-xl mb-4;
+}
+.nearby-sec .near-location h4 a{
+  @apply hover:text-black
+}
+.near-location .store-link{
+  @apply justify-start mt-4;
+}
+.near-location .store-link .direction{
+  @apply py-2 md:py-3;
+}
+.near-location .store-link .view-details{
+  @apply py-2 leading-6 md:py-3 w-[calc(50%_-_5px)] min-w-0 2xl:min-w-[200px] bg-[#bd1508] hover:bg-[#68717a] text-white rounded ml-2.5 transition-all duration-300;
+}
+
+.nearby-sec #splide-nearby{
+  @apply sm:max-w-xl mx-auto xl:max-w-full
+}
+.nearby-sec .splide__track{
+  @apply xl:overflow-visible
+}
+.nearby-sec .splide__list{
+  @apply xl:justify-center
+}
+.nearby-sec .splide__pagination{
+  @apply relative bottom-0 lg:mt-5;
+}
+.nearby-sec .splide__pagination li{
+  @apply p-0
+}
+.nearby-sec .splide__pagination li .splide__pagination__page{
+  @apply w-2 lg:w-3 h-2 lg:h-3 bg-pink-primary opacity-30;
+}
+.nearby-sec .splide__pagination li .splide__pagination__page.is-active{
+  @apply scale-100 opacity-100;
+}
+.nearby-sec .splide .splide__arrows .splide__arrow.splide__arrow--prev{
+  @apply xl:hidden  -left-2.5 sm:left-0 -mt-[7.5px] lg:-mt-[14px] xl:mt-0;
+}
+.nearby-sec .splide .splide__arrows .splide__arrow.splide__arrow--next{
+  @apply xl:hidden -right-2.5 sm:right-0 -mt-[7.5px] lg:-mt-[14px] xl:mt-0;
+}
+
+/* end */
+/* 
+faqs */
+
+.faq-sec{
+  @apply py-5 lg:py-[60px]
+}
+.faq-sec .container{
+  @apply max-w-[1240px]
+}
+.faq-blocks{
+  @apply px-4 lg:px-[50px] py-2 lg:py-[60px] flex flex-wrap items-start max-w-[1200px] mx-auto shadow-[3.5px_6.06px_10px_rgba(1,1,1,0.18)] lg:shadow-[3.5px_6.06px_21px_rgba(1,1,1,0.18)] rounded-[5px] lg:rounded-[30px] justify-between mt-6 lg:mt-11
+}
+/* .faq-blocks .left-faq{
+  @apply w-full  lg:w-[calc(50%_-_30px)]
+}
+.faq-blocks .right-faq{
+  @apply w-full lg:w-[calc(50%_-_30px)]
+} */
+.faq-blocks .faq-block{
+  @apply w-full border-b border-purple-primary border-opacity-10;
+}
+.faq-blocks .faq-block:last-child{
+  @apply border-b-0
+}
+/* .faq-blocks .left-faq .faq-block:last-child{
+  @apply border-b lg:border-b-0
+} */
+
+.faq-blocks .faq-block h4{
+  @apply text-base lg:text-xl  mt-0  font-medium lg:font-semibold py-4 pr-10 relative leading-6 lg:leading-7 cursor-pointer select-none
+}
+.faq-blocks .faq-block h4 .faq-icon{
+  @apply absolute top-4 right-0 border lg:border-2 border-purple-primary w-5 lg:w-7 h-5 lg:h-7 rounded-full z-10;
+}
+.faq-blocks .faq-block h4 .faq-icon:before{
+  @apply content-[''] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 lg:w-3 h-[1px] lg:h-0.5 bg-pink-primary
+}
+.faq-blocks .faq-block h4 .faq-icon:after{
+  @apply content-[''] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-2 lg:h-3 w-[1px] lg:w-0.5 bg-pink-primary
+}
+.faq-blocks .faq-block.opened h4 .faq-icon:after{
+  @apply opacity-0
+}
+
+
+.faq-blocks .faq-block .faq-content{
+  @apply max-h-0 overflow-hidden;
+}
+.faq-blocks .faq-block.opened .faq-content{
+  @apply pb-5 max-h-96;
+}
+.faq-blocks .faq-block .faq-content a{
+  @apply text-pink-primary;
+}
+
+/* end */
+.popbtn-main{ @apply flex justify-center }
+.popbtn{ @apply   !text-white  bg-pink-primary py-2 rounded-lg  px-6 }
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes animate
+{
+  0%
+  {
+    transform:rotate(45deg);
+  }
+  100%
+  {
+    transform:rotate(405deg);
+  }
+}
+.spinner-main {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: #ffffffa8;
+}
+
+.spinner-container {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:150px;
+  height:150px;
+  background:transparent;
+  border:3px solid #3c3c3c;
+  border-radius:50%;
+  text-align:center;
+  line-height:150px;
+  font-family:sans-serif;
+  font-size:20px;
+  color:black;     z-index: 9999;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  text-shadow:0 0 10px #eb0000;
+  box-shadow:0 0 20px rgba(0,0,0,.5);
+}
+.spinner-container:before
+{
+  content:'';
+  position:absolute;
+  top:-3px;
+  left:-3px;
+  width:100%;
+  height:100%;
+  border:3px solid transparent;
+  border-top:3px solid #eb0000;
+  border-right:3px solid #eb0000;
+  border-radius:50%;
+  animation:animateC 2s linear infinite;
+}
+.loading-spinner
+{
+  display:block;
+  position:absolute;
+  top:calc(50% - 2px);
+  left:50%;
+  width:50%;
+  height:4px;
+  background:transparent;
+  transform-origin:left;
+  animation:animate 2s linear infinite;
+}
+.loading-spinner:before
+{
+  content:'';
+  position:absolute;
+  width:16px;
+  height:16px;
+  border-radius:50%;
+  background:#eb0000;
+  top:-6px;
+  right:-8px;
+  box-shadow:0 0 20px #eb0000;
+}
+/*footer*/
+.footer-content{ @apply bg-grey pb-4 w-full font-Encode-Sans }
+.footer-content h3{ @apply text-center text-xl py-3 font-semibold }
+.footer-content p{ @apply text-center text-xs  }
+
+.footer-newslettter{@apply w-full mt-2 px-2 sm:px-0 sm:w-[400px]  mx-auto flex   }
+.footer-newslettter input{@apply  w-[75%] text-sm leading-5 text-[#1d2024] py-2 px-3 bg-white border border-[#c2c7cc]  rounded outline-none h-10}
+.footer-newslettter button{@apply text-sm leading-4 text-center inline-block min-w-[130px] px-3 py-3 m-0 cursor-pointer border-none rounded text-white bg-[#1d2024]}
+
+
+
+
+
+.footer { @apply bg-[#333]  text-white py-12 font-Encode-Sans }
+
+.footer-nav{ @apply flex flex-wrap   }
+.footer-nav .footer-links{ @apply w-1/4 text-sm}
+.footer-nav .footer-links h4{ @apply text-sm   font-bold}
+.footer-nav .footer-links ul{ @apply m-0 leading-5}
+.footer-nav .footer-links ul li{ @apply m-0 py-1 leading-5}
+.footer-nav .footer-links ul li a{ @apply underline text-white    }
+
+
+.find-location-sec{@apply w-full }
+.find-location-sec a{@apply  text-white  }
+.store-locator-button{@apply w-full justify-center text-center leading-4 no-underline flex items-center  min-w-[130px]  py-3 px-5 m-0 border-none rounded text-white bg-[#68717a] hover:bg-black
+}
+
+.store-locator-button img{@apply w-5 mr-1 }
+.footer-nav .social-links ul{@apply  flex }
+.footer-nav .social-links ul li{ @apply mx-2 mt-8 }
+.footer-nav .social-links ul li a{ @apply  bg-[#68717a]  hover:bg-opacity-80 inline-block rounded-full p-2 }
+.footer-nav .social-links ul li a img{ @apply w-4 h-4 }
+.footerLogo { @apply w-full text-center mb-14}
+
+.footerLogo .logo {  @apply inline-block}
+.footer_links {    @apply flex flex-1}
+.footer_links .column { @apply flex-1}
+.footer_links .column h5 { @apply text-lg font-medium mb-8}
+.footer_links .column ul{    @apply flex justify-end w-full}
+.footer_links .column ul li {    @apply leading-5 text-base inline-block mr-12 last:mr-0}
+/* .footer_links a{    @apply text-footer-link-color } */
+
+
+
+@tailwind utilities;
+
+
+body.active-modal {
+  overflow-y: hidden;
+}
+
+.btn-modal {
+  padding: 1px 1px;
+  display: block;
+  /* margin: 100px auto 0; */
+  font-size: 18px;
+}
+
+.modal, .overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+.overlay {
+  background: rgba(49,49,49,0.8);
+}
+.modal-content {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.4;
+  background: #f1f1f1;
+  padding: 14px 28px;
+  border-radius: 3px;
+  max-width: 600px;
+  min-width: 300px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 7px;
+}

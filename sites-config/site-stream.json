@@ -1,0 +1,23 @@
+{
+  "$id": "site-entity",
+  "filter": {
+    "entityIds": ["globaldata"]
+  },
+  "source": "knowledgeGraph",
+  "fields": [
+    "name",
+    "logo",
+    "c_headerlink",
+    "c_underlink",
+    "c_consumerDes",
+    "c_buyOnline",
+    "c_latest",
+    "c_helpsupport",
+    "c_vodaphoneuk"
+ 
+    ],
+  "localization": {
+    "locales": ["en"],
+    "primary": false
+  }
+}
