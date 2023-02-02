@@ -740,7 +740,7 @@ const Location: Template<ExternalApiRenderData> = ({
         />
         <About  c_newsPhoto={c_newsPhoto} description={description}></About>
         <OfferSection offer={photoGallery}/>
-        <Storefacility c_ourservice={c_ourservice}></Storefacility>
+        {/* <Storefacility c_ourservice={c_ourservice}></Storefacility> */}
         <div className="w-full text-center">
            {/* <DiscoverSection discoverSection={c_discoverSection}/> */}
          
