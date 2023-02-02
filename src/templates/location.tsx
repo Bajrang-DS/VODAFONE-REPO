@@ -555,82 +555,82 @@ const Location: Template<ExternalApiRenderData> = ({
       hoursSchema.push(openIntervalsSchema);
     }
   }
-  // document.dm_directoryParents &&
-  // document.dm_directoryParents.map((i: any, index: any) => {
-  //   if (i.meta.entityType.id == "Vodafone_country") {
-  //     document.dm_directoryParents[index].name = document.dm_directoryParents[index].name;
-  //     document.dm_directoryParents[index].slug = document.dm_directoryParents[index].slug;
+  document.dm_directoryParents &&
+  document.dm_directoryParents.map((i: any, index: any) => {
+    if (i.meta.entityType.id == "Vodafone_country") {
+      document.dm_directoryParents[index].name = document.dm_directoryParents[index].name;
+      document.dm_directoryParents[index].slug = document.dm_directoryParents[index].slug;
   
-  //     breadcrumbScheme.push({
-  //       "@type": "ListItem",
-  //       position: index,
-  //       item: {
-  //         "@id":
-  //           stagingBaseUrl +  "/" +
+      breadcrumbScheme.push({
+        "@type": "ListItem",
+        position: index,
+        item: {
+          "@id":
+            stagingBaseUrl +  "/" +
        
-  //           document.dm_directoryParents[index].slug +
-  //           ".html",
-  //         name: i.name,
-  //       },
-  //     });
-  //   } else if (i.meta.entityType.id == "Vodafone_region") {
-  //     let url = "";
-  //     document.dm_directoryParents.map((j: any) => {
-  //       if (
-  //         j.meta.entityType.id != "Vodafone_region" &&
-  //         j.meta.entityType.id != "Vodafone_city" &&
-  //         j.meta.entityType.id != "Vodafone_root"
-  //       ) {
+            document.dm_directoryParents[index].slug +
+            ".html",
+          name: i.name,
+        },
+      });
+    } else if (i.meta.entityType.id == "Vodafone_region") {
+      let url = "";
+      document.dm_directoryParents.map((j: any) => {
+        if (
+          j.meta.entityType.id != "Vodafone_region" &&
+          j.meta.entityType.id != "Vodafone_city" &&
+          j.meta.entityType.id != "Vodafone_root"
+        ) {
   
-  //         url = url + "/" +j.slug;
-  //       }
-  //     });
-  //     breadcrumbScheme.push({
-  //       "@type": "ListItem",
-  //       position: index,
-  //       item: {
-  //         "@id":
-  //           stagingBaseUrl +
-  //           url + "/" +
-  //           document.dm_directoryParents[index].slug +
-  //           ".html",
-  //         name: i.name,
-  //       },
-  //     });
-  //   } else if (i.meta.entityType.id == "Vodafone_city") {
-  //     let url = "";
-  //     document.dm_directoryParents.map((j: any) => {
-  //       if (
-  //         j.meta.entityType.id != "Vodafone_city" &&
-  //         j.meta.entityType.id != "Vodafone_root"
-  //       ) {
+          url = url + "/" +j.slug;
+        }
+      });
+      breadcrumbScheme.push({
+        "@type": "ListItem",
+        position: index,
+        item: {
+          "@id":
+            stagingBaseUrl +
+            url + "/" +
+            document.dm_directoryParents[index].slug +
+            ".html",
+          name: i.name,
+        },
+      });
+    } else if (i.meta.entityType.id == "Vodafone_city") {
+      let url = "";
+      document.dm_directoryParents.map((j: any) => {
+        if (
+          j.meta.entityType.id != "Vodafone_city" &&
+          j.meta.entityType.id != "Vodafone_root"
+        ) {
   
-  //         url = url  + "/" + j.slug;
-  //       }
-  //     });
-  //     breadcrumbScheme.push({
-  //       "@type": "ListItem",
-  //       position: index,
-  //       item: {
-  //         "@id":
-  //           stagingBaseUrl +
-  //           url +"/" +
-  //           document.dm_directoryParents[index].slug +
-  //           ".html",
-  //         name: i.name,
-  //       },
-  //     });
-  //   }
-  // });
+          url = url  + "/" + j.slug;
+        }
+      });
+      breadcrumbScheme.push({
+        "@type": "ListItem",
+        position: index,
+        item: {
+          "@id":
+            stagingBaseUrl +
+            url +"/" +
+            document.dm_directoryParents[index].slug +
+            ".html",
+          name: i.name,
+        },
+      });
+    }
+  });
   
-  // breadcrumbScheme.push({
-  // "@type": "ListItem",
-  // position: 4,
-  // item: {
-  //   "@id": stagingBaseUrl + path,
-  //   name: document.name,
-  // },
-  // });
+  breadcrumbScheme.push({
+  "@type": "ListItem",
+  position: 4,
+  item: {
+    "@id": stagingBaseUrl + path,
+    name: document.name,
+  },
+  });
   // var buttonLabel = c_booking.button.label ? c_booking.button.label : "Label" ;
   // var buttonLink = c_booking.button.link ? c_booking.button.link : "Link";
   // var ctaLabel   = c_booking.cta.label ? c_booking.cta.label : "CTA Label" ; 
@@ -690,7 +690,7 @@ const Location: Template<ExternalApiRenderData> = ({
       >
        {c_faqs ? (
         <>
-          {/* <JsonLd<FAQPage>
+          <JsonLd<FAQPage>
             item={{
               "@context": "https://schema.org",
               "@type": "FAQPage",
@@ -708,7 +708,7 @@ const Location: Template<ExternalApiRenderData> = ({
                   };
                 }),
             }}
-          /> */}
+          />
         </>
       ) : (
         <></>

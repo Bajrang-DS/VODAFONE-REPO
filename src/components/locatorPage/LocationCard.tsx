@@ -41,15 +41,15 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
     "");
   let results: any = removeSpecialCharacters.replaceAll(" ", "-");
   if (!result.rawData.slug) {
-    url = `${result.id}.html`;
+    url = `${result.id}-${results}.html`;
   } else {
-    url = `${result.rawData.id.toString()}k`;
+    url = `${result.rawData.slug.toString()}.html`;
   }
 
   return (
-    <div className={`location result`} id={`result-${result.name}`}>
+    <div className={`location result`} id={`result-${result.index}`}>
       <div className="relative  w-full">
-        <h2  className="onhighLight"><Link eventName="Name" href={`${url}`}>{result.rawData.id}</Link></h2>
+        <h2  className="onhighLight"><Link eventName="Name" href={`${url}`}>{result.rawData.name}</Link></h2>
         <div className="miles "><span className="icon ">{svgIcons.locationmiles}</span> {metersToMiles(result.distance ?? 0)} mi</div>
       </div>
 
@@ -101,8 +101,8 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
         {/* <button onClick={getDirectionUrl} >getlocation</button> */}
         {/* {result.rawData.c_heading.viewDetails? */}
       
-        <Link className="consulation" eventName={"Store Detail"}  href={result.rawData.id}>
-        
+        <Link className="consulation" eventName={"Store Detail"}  href={`${url}`}>
+        {svgIcons.storeview}
          Store Detail
        
         </Link>
