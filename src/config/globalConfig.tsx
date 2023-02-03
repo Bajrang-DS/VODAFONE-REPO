@@ -25,7 +25,7 @@ export const googleMapsConfig =  {
 };
 
 export const AnswerExperienceConfig =  {
-    limit:2,
+    limit:4,
     experienceKey: "vodaphone",
     locale:"en",
     apiKey: "969ae8d3e6e69666148f1b59610cc094",

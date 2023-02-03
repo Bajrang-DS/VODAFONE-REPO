@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 import { twMerge, useComposedCssClasses } from '..//../hooks/useComposedCssClasses';
 import mapicon from "..//../images/placeholder.png";
 // import Groupnear from "..//../images/Groupnear.png";
-import Groupnear from "..//../images/vodafone-favIcon.ico"
+import Groupnear from "..//../images/map-center9.png"
 import phone from "..//../images/phone.svg";
 import GetDirection from "../commons/GetDirection";
 import cluster from "../../images/cluser.png"

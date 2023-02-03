@@ -8,7 +8,7 @@ import SearchLayout from "../components/locatorPage/SearchLayout";
 import {  AnswerExperienceConfig, stagingBaseUrl  } from "../config/globalConfig";
 // import favicon from "../images/favicon.png";
 import favicon from "../images/vodafone-favIcon.ico";
-import metaIcon from "../images/vodafone-icon.png";
+import metaIcon from "../images/map-center9.png";
 
 // import Footer from "../components/layouts/footer";
 import Header from "../components/layouts/header";

@@ -124,7 +124,7 @@ const NearByLocation = (entities: props) => {
 
   return (
     <>
-      <div className="nearby-sec pl-48">
+      <div className="nearby-sec pl-36">
         <div className="container">
           <div className="w-full text-center">
             <h3 className="text-3xl pl-76 font-bold">NEARBY LOCATION </h3>

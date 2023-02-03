@@ -563,30 +563,31 @@ const SearchLayout = (item:any): JSX.Element => {
               searchOnSelect={false}
               searchFields={[
                 {
+                
                   entityType: "location",
-                  fieldApiName: "address.line1",
+                  fieldApiName: "name",
+                },
+                {
+                  entityType: "location",
+                  fieldApiName: "address.city",
+                  
+
+                  },
+                  {
+                    entityType: "location",
+                    fieldApiName: "address.line1",
 
                 },
                 {
                   entityType: "location",
                   fieldApiName: "address.postalCode",
 
-                  },
-                  {
-                    entityType: "location",
-                    fieldApiName: "name",
-
                 },
-                {
-                  entityType: "location",
-                  fieldApiName: "address.city",
+                // {
+                //   entityType: "location",
+                //   fieldApiName: "address.region",
 
-                },
-                {
-                  entityType: "location",
-                  fieldApiName: "address.region",
-
-                  }
+                //   }
                   // {
                   //   entityType: "location",
                   //   fieldApiName: "address.countryCode",
