@@ -201,7 +201,7 @@ return (
       <PageLayout>
       <Header _site={_site}/>
       <div className="header-title ">
-          {/* <Herobanner c_bannerTitle={_site.c_bannerTitle}></Herobanner> */}
+          <Herobanner c_bannerTitle={_site.c_bannerTitle}></Herobanner>
         </div>
         <SearchHeadlessProvider
             experienceKey={AnswerExperienceConfig.experienceKey}

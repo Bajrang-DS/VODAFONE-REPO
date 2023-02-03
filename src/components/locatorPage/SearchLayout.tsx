@@ -586,7 +586,7 @@ const SearchLayout = (item:any): JSX.Element => {
                   entityType: "location",
                   fieldApiName: "address.region",
 
-                  },
+                  }
                   // {
                   //   entityType: "location",
                   //   fieldApiName: "address.countryCode",

@@ -759,13 +759,16 @@ const Location: Template<ExternalApiRenderData> = ({
             c_heading="{c_heading}"
 
           />
-        <Footer _site={_site}/>
+       
           
-      {/* <div className=" flex justify-center"><div><Link href="/" eventName="ViewMoreLocation" className="bg-[#FF0000] p-2 text-white">{_site.c_redirectToLocator}</Link></div></div>
-      <Footer midfooter={_site.c_midfooter} c_buyOnline={_site.c_buyOnline} buyingonlineCTAs={_site.c_buyingOnlinecta} latestPhone={_site.c_latestPhones} latestPhonesCTAs={_site.c_latestPhonescta}
+       <div className=" flex justify-center"><div><Link href="/" eventName="ViewMoreLocation" className="bg-[#FF0000] p-2 text-white">View More Locations</Link></div></div>
+
+       <Footer _site={_site}/>
+       
+      {/* <Footer midfooter={_site.c_midfooter} c_buyOnline={_site.c_buyOnline} buyingonlineCTAs={_site.c_buyingOnlinecta} latestPhone={_site.c_latestPhones} latestPhonesCTAs={_site.c_latestPhonescta}
      helpSupport={_site.c_helpSupport} helpSupportcta={_site.c_helpSupportcta} vodafoneUK={_site.c_vodafoneUK} vodafoneUKCta={_site.c_vodafoneUKCta} c_cPIChanges={_site.c_cPIChanges}
      c_cPIChangesDescription1={_site.c_cPIChangesDescription1} vodafoneDetails={_site.c_vodafoneDetails}
-     ></Footer> */}
+     ></Footer>  */}
       </AnalyticsScopeProvider>
       </AnalyticsProvider>
     </>
