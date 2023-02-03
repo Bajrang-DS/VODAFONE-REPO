@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 type Faq = {
   prop: any;
-  c_fAQsCta:any;
+  c_faqs:any;
 };
 
 const Faq = (faqData: Faq) => {
@@ -46,9 +46,9 @@ const Faq = (faqData: Faq) => {
     <>
       <div className="faq-sec bg-light">
         <div className="container mx-auto">
-          {/* <div className="heading text-center">
+          <div className="heading text-center">
             <h3 className="sec_heading">Frequently Asked Question</h3>
-          </div> */}
+          </div>
 
           <div className="faq-blocks">
             <div className="left-faq">
@@ -80,7 +80,7 @@ const Faq = (faqData: Faq) => {
                   
                    })}
                  </div>
-                 {faqData.c_fAQsCta.label && faqData.c_fAQsCta.link &&<div className="mt-12 px-96 mx-16"><Link href={faqData.c_fAQsCta.link} eventName={faqData.c_fAQsCta.label} className="bg-[#FF0000] p-2 text-white">{faqData.c_fAQsCta.label}</Link></div>}
+                 {faqData.c_faqs && faqData.c_faqs &&<div className="mt-12 px-96 mx-16"><Link href={faqData.c_faqs} eventName={faqData.c_faqs} className="bg-[#FF0000] p-2 text-white">{faqData.c_faqs}</Link></div>}
                  
           </div>
         </div>
