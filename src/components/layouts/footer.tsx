@@ -8,7 +8,7 @@ import * as React from "react";
 import { Link } from "@yext/pages/components";
 
 const Footer = (props: any) => {
-  const { c_buyOnline, c_latest, c_helpsupport, c_vodaphoneuk, c_underlink, c_consumerDes } = props;
+  const { c_buyOnline, c_latest, c_helpsupport, c_vodaphoneuk, c_underlink, c_consumerDes, c_cpichange, c_vodaphonedetaols } = props;
 
 
   return (
@@ -92,17 +92,17 @@ const Footer = (props: any) => {
           </div>
         </div>
         <div className="container-custom mx-auto">
-          {/* <div key={props.c_cPIChanges} className="footer_links">
+          <div key={props.c_cpichange} className="footer_links">
             <h2>
-              {props.c_cPIChanges}
+              {props._site.c_cpichange}
             </h2>
-          </div> */}
-          {/* <p key={props.c_consumerDes}>
+          </div> 
+           <p key={props.c_consumerDes}>
             {props._site.c_consumerDes}
-          </p>  */}
-          {/* <p key={props.vodafoneDetails}>
-            {props.vodafoneDetails}
-          </p> */}
+          </p>  <br />
+           <p key={props.c_vodaphonedetaols}>
+            {props._site.c_vodaphonedetaols}
+          </p>
         </div>
       </footer>
     </>

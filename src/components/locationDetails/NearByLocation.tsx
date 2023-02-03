@@ -137,14 +137,14 @@ const NearByLocation = (entities: props) => {
               type: "slide",
 
               perPage: 3,
-              perMove: 1,
+              perMove: 2,
               arrows: false,
               drag: false,
               pagination: false,
               lazyLoad: "nearby",
               breakpoints: {
                 1279: {
-                  perPage: 1,
+                  perPage: 2,
                   drag: true,
                   pagination: true,
                   arrows: true,

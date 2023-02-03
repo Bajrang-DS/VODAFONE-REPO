@@ -165,6 +165,7 @@ export const config: TemplateConfig = {
       "yextDisplayCoordinate",
       "hours",
       "slug",
+      "c_discoverSection",
       // "c_techTeamTitle",
       // "c_ourservice",
       // "c_techTeamDescription",
@@ -420,7 +421,7 @@ type ExternalApiData = TemplateProps & { externalApiData: nearByLocation };
 export const transformProps: TransformProps<ExternalApiData> = async (
   data: any
 ) => {
-  const url = `https://liveapi-sandbox.yext.com/v2/accounts/me/entities/geosearch?radius=500&location=${data.document.yextDisplayCoordinate.latitude},${data.document.yextDisplayCoordinate.longitude}&api_key=3a58affb71208da4872659791cb78e07&v=20181201&resolvePlaceholders=true&entityTypes=location&limit=3`
+  const url = `https://liveapi-sandbox.yext.com/v2/accounts/me/entities/geosearch?radius=1000&location=${data.document.yextDisplayCoordinate.latitude},${data.document.yextDisplayCoordinate.longitude}&api_key=3a58affb71208da4872659791cb78e07&v=20181201&resolvePlaceholders=true&entityTypes=location&limit=3`
   const externalApiData = (await fetch(url).then((res: any) =>
     res.json()
   )) as nearByLocation;
@@ -508,7 +509,6 @@ const Location: Template<ExternalApiRenderData> = ({
     c_newsPhoto,
     c_Services,
     logo,
-   
   
    
 
@@ -742,7 +742,7 @@ const Location: Template<ExternalApiRenderData> = ({
         <OfferSection offer={photoGallery}/>
         <Storefacility c_Services={c_Services}></Storefacility>
         <div className="w-full text-center">
-           {/* <DiscoverSection discoverSection={c_discoverSection}/> */}
+           <DiscoverSection c_discoverSection={c_discoverSection}/>
          
            {c_faqs ? <div className="w-full text-center">
           <h4 className="sec_heading  font-bold text-[35px]">Frequently Asked Questions</h4>

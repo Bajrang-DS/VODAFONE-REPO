@@ -13,7 +13,9 @@
     "c_buyOnline",
     "c_latest",
     "c_helpsupport",
-    "c_vodaphoneuk"
+    "c_vodaphoneuk",
+    "c_cpichange",
+    "c_vodaphonedetaols"
  
     ],
   "localization": {
