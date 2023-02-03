@@ -97,16 +97,16 @@ let slugString = "";
 //   return slugString + document.slug + ".html";
 // };
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  var url: any = ""
+  let url = "";
   document.dm_directoryParents.map((i: any) => {
     if (i.meta.entityType.id == 'Vodafone_country') {
-      url = `${i.slug}`
+      url += i.slug + "/";
     }
     else if (i.meta.entityType.id == 'Vodafone_region') {
       url = `${url}/${i.slug}/${document.slug.toString()}.html`
     }
   })
-  return url;
+  return url + '.html';
 };
 
 
@@ -118,10 +118,10 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   __meta,
 }): HeadConfig => {
 
-  let metaDescription = document._site.c_metaTags.description ? document._site.c_metaTags.description : "Find your nearest Vodafone store and which services are available." + document.name;
+  let metaDescription =  "Find your nearest Vodafone store and which services are available." + document.name;
   let metaTitle = `Vodafone Store in ${document.name} | Find a Local Store`;
-  let canonicalURL = document._site.c_metaTags.canonicalURL  ? document._site.c_metaTags.canonicalURL + document.dm_directoryParents[1].name.toLowerCase() +"/"+ document.dm_directoryParents[2].slug +"/"+ document.slug + ".html"  : stagingBaseUrl + document.dm_directoryParents[1].name.toLowerCase() +"/"+ document.dm_directoryParents[2].slug +"/"+ document.slug + ".html"
-  let ogmetaImage = document._site.c_ogmetaTags.oGImage[0].url ? document._site.c_ogmetaTags.oGImage[0].url : "https://cdn.vodafone.co.uk/en/assets/images/large/IMG_10480.jpg"
+  // let canonicalURL = document._site.c_metaTags.canonicalURL  ? document._site.c_metaTags.canonicalURL + document.dm_directoryParents[1].name.toLowerCase() +"/"+ document.dm_directoryParents[2].slug +"/"+ document.slug + ".html"  : stagingBaseUrl + document.dm_directoryParents[1].name.toLowerCase() +"/"+ document.dm_directoryParents[2].slug +"/"+ document.slug + ".html"
+  // let ogmetaImage = document._site.c_ogmetaTags.oGImage[0].url ? document._site.c_ogmetaTags.oGImage[0].url : "https://cdn.vodafone.co.uk/en/assets/images/large/IMG_10480.jpg"
 
   return {
     title: metaTitle,
@@ -171,7 +171,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         type: "link",
         attributes: {
           rel: "canonical",
-          href: ` ${canonicalURL}`,
+          // href: ` ${canonicalURL}`,
         },
       },
       ///og tags
@@ -180,7 +180,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         type: "meta",
         attributes: {
           property: "og:url",
-          content: `${canonicalURL}`,
+          // content: `${canonicalURL}`,
         },
       },
       
@@ -202,7 +202,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         type: "meta",
         attributes: {
           name: "og:image",
-          content: `${ogmetaImage}`
+          // content: `${ogmetaImage}`
         },
       },
       
@@ -226,7 +226,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         type: "meta",
         attributes: {
           name: "twitter:url",
-          content: `${canonicalURL}`,
+          // content: `${canonicalURL}`,
         },
       },
       {
