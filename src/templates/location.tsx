@@ -717,7 +717,6 @@ const Location: Template<ExternalApiRenderData> = ({
       )}
       <AnalyticsScopeProvider name={""}>
       <Header _site={_site}/>
-      {/* <Banner /> */}
         <AnalyticsScopeProvider name={"header"}>
         </AnalyticsScopeProvider>
         <BreadCrumbs

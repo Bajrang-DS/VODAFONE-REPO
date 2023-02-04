@@ -6,6 +6,10 @@ import BreadCrumbs from "../components/BreadCrumbs";
 import "../index.css";
 // import "../main.css";
 import {
+
+  AnalyticsScopeProvider,
+} from "@yext/pages/components";
+import {
   Template,
   GetPath,
   TemplateConfig,
@@ -15,6 +19,8 @@ import {
   HeadConfig,
 } from "@yext/pages";
 import { stagingBaseUrl } from "../constants";
+import { AnalyticsProvider } from "@yext/search-ui-react";
+import Herobanner from "../components/commons/Herobanner";
 // import Logo from "../images/logo.svg";
 // import bannerImage from "../images/app-bg.png";
 var currentUrl = "";
@@ -76,7 +82,7 @@ const Root: Template<TemplateRenderProps> = ({
   path,
   document,
 }) => {
-  const { description, dm_directoryParents, dm_directoryChildren } = document;
+  const { description, dm_directoryParents, dm_directoryChildren, _site } = document;
 
   const { name, slug, c_globalData } = document;
 
@@ -100,38 +106,49 @@ const Root: Template<TemplateRenderProps> = ({
         parents={dm_directoryParents}
         baseUrl={relativePrefixToRoot}
       ></BreadCrumbs> */}
-      <div className="directory-root py-5 lg:py-[60px]">
-        <div className="container">
-          <div className="flex flex-wrap -mx-4">
-            {dm_directoryChildren.map((child: any) => {
-              return (
-                <>
-                  <div className="w-1/2 md:w-1/3 lg:w-1/4 px-4">
-                    <a
-                      href={slug + "/" + child.slug + ".html"}
-                      key={child.slug}
-                      className="hover:text-red"
-                    >
-                      {child.name} {child.dm_directoryChildrenCount}
-                    </a>
-                  </div>
-                </>
-              );
-            })}
+
+      <AnalyticsScopeProvider name={""}>
+        {/* <Header _site={_site} /> */}
+        {/* <Header personal={_site.c_personal} bussiness={_site.c_business} findAStore={_site.c_findAStore} networkStatusChecker={_site.c_networkStatusChecker}></Header> */}
+        <BreadCrumbs
+          name={name}
+          parents={dm_directoryParents}
+          baseUrl={relativePrefixToRoot}
+          address={{}}
+
+        ></BreadCrumbs>
+        <div className="header-title ">
+          <Herobanner c_bannerTitle={_site.c_bannerTitle}></Herobanner>
+        </div>
+        <div className="directory-root py-5 lg:py-[60px]">
+          <div className="container">
+            <div className="flex flex-wrap -mx-4">
+              {dm_directoryChildren.map((child: any) => {
+                return (
+                  <>
+                    <div className="w-1/2 md:w-1/3 lg:w-1/4 px-4">
+                      <a
+                        href={slug + "/" + child.slug + ".html"}
+                        key={child.slug}
+                        className="hover:text-red"
+                      >
+                        {child.name} {child.dm_directoryChildrenCount}
+                      </a>
+                    </div>
+                  </>
+                );
+              })}
+            </div>
           </div>
         </div>
-      </div>
-      {/* <Footer
-        data={c_globalData[0].c_footerLinks}
-        address={c_globalData[0].address}
-        c_companyrn={c_globalData[0].c_companyrn}
-        c_phoneNumber={c_globalData[0].c_phoneNumber}
-        facebookPageUrl={c_globalData[0].facebookPageUrl}
-        instagramHandle={c_globalData[0].instagramHandle}
-        twitterHandle={c_globalData[0].twitterHandle}
-        c_tikTok={c_globalData[0].c_tikTok}
-      /> */}
+        {/* <Footer _site={_site} /> */}
+      </AnalyticsScopeProvider>
+    
+
+     
+
     </>
+
   );
 };
 

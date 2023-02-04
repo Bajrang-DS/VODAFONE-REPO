@@ -55,7 +55,7 @@ let openInfoWindow = false;
 
 const builtInCssClasses: Readonly<GoogleMapsCssClasses> = {
   googleMapsContainer:
-    "w-full  h-4 md:h-96 lg:h-[calc(100vh_-_9.375rempx)] top-0   2xl:h-[calc(100vh_-_9.375rem)] order-1 lg:order-none z-[99]",
+    "w-full  h-48 md:h-96 lg:h-[calc(100vh_-_9.375rempx)] top-0   2xl:h-[calc(100vh_-_9.375rem)] order-1 lg:order-none z-[99]",
 };
 
 /**
@@ -465,18 +465,18 @@ function UnwrappedGoogleMaps({
             </div>
           </div>}
         </div >
-        {/* <div className="store-link">
+        <div className="store-link">
         
-        {result.rawData.displayCoordinate ?
+        {/* {result.rawData.displayCoordinate ?
           <GetDirection label="Direction" buttonText="Direction" address={result.rawData.address} latitude={result.rawData.displayCoordinate?.latitude} longitude={result.rawData.displayCoordinate?.longitude} />
-          : <GetDirection label="Direction" address={result.rawData.address} buttonText="Direction" latitude={result.rawData.yextDisplayCoordinate?.latitude} longitude={result.rawData.yextDisplayCoordinate?.longitude} />}
+          : <GetDirection label="Direction" address={result.rawData.address} buttonText="Direction" latitude={result.rawData.yextDisplayCoordinate?.latitude} longitude={result.rawData.yextDisplayCoordinate?.longitude} />} */}
       
       
         <Link className="consulation" eventName={"Store Detail"}  href={`${url}`}>
         {svgIcons.storeview}
         Store Detail
         </Link>
-      </div> */}
+      </div>
       </div>
       ); 
 

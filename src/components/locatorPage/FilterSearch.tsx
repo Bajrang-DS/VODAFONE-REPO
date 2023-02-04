@@ -182,8 +182,8 @@ const FilterSearch = React.forwardRef<FilterHandle, FilterSearchProps>(
           onlyAllowDropdownOptionSubmissions={true}
           onInputChange={(newInput: any) => {
             setInput(newInput);
-            console.log(newInput, "newinput");
-            // handleInputValue();
+            // console.log(newInput, "newinput");
+            handleInputValue();
             // handleSetUserShareLocation(newInput,true);
           }}
           onInputFocus={(input: any) => {

@@ -90,7 +90,7 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
   });
   url += document.slug.toString();
 
-  return url + '.html';
+  return url + "/";
 };
 
 

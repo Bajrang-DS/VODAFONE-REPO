@@ -33,6 +33,7 @@ const SearchLayout = (item:any): JSX.Element => {
   const [modalIsOpen, setIsOpen] = React.useState(false);
   // const [centerLatitude, setCenterLatitude] = useState(googleMapsConfig.centerLatitude);
   // const [centerLongitude, setCenterLongitude] = useState(googleMapsConfig.centerLongitude);
+  const [displaymsg, setDisplaymsg] = useState(false);
   const [inputvalue, setInputValue] = useState('');
   const [check, setCheck] = useState(false);
   type FilterHandle = React.ElementRef<typeof FilterSearch>;
@@ -553,8 +554,10 @@ const SearchLayout = (item:any): JSX.Element => {
           </button>
             <FilterSearch
              ref={filterRef}
+             displaymsg={displaymsg}
+             setDisplaymsg={setDisplaymsg}
               customCssClasses={{
-                filterSearchContainer: "m-2",
+                filterSearchContainer: "m-2 w-full",
                 inputElement: "FilterSearchInput",
                 optionsContainer: "options"
               }}
@@ -612,7 +615,7 @@ const SearchLayout = (item:any): JSX.Element => {
             <div className="sticky top-0 z-0 bg-slate-50 border-b border-slate-300">
 
               <ResultsCount
-                customCssClasses={{ resultsCountContainer: "mx-2 my-0" }}
+               customCssClasses={{ container: "mx-2 my-0 text-dark-gray" }}
               />
             </div>
             {/* <div className=" overflow-y-auto   min-h-[calc(100vh_-_200px)]  max-h-[calc(100vh_-_200px)]  ">  */}
