@@ -552,12 +552,10 @@ const SearchLayout = (item:any): JSX.Element => {
             id="search-location-button" onClick={Findinput}>
             {svgIcons.findouticon}
           </button>
-            <FilterSearch
+          <FilterSearch
              ref={filterRef}
-             displaymsg={displaymsg}
-             setDisplaymsg={setDisplaymsg}
               customCssClasses={{
-                filterSearchContainer: "m-2 w-full",
+                filterSearchContainer: "m-2",
                 inputElement: "FilterSearchInput",
                 optionsContainer: "options"
               }}

@@ -101,25 +101,8 @@ const Root: Template<TemplateRenderProps> = ({
         BackgroundImage={bannerImage}
         CtaButton={""}
       /> */}
-      {/* <BreadCrumbs
-        name={name}
-        parents={dm_directoryParents}
-        baseUrl={relativePrefixToRoot}
-      ></BreadCrumbs> */}
+   
 
-      <AnalyticsScopeProvider name={""}>
-        {/* <Header _site={_site} /> */}
-        {/* <Header personal={_site.c_personal} bussiness={_site.c_business} findAStore={_site.c_findAStore} networkStatusChecker={_site.c_networkStatusChecker}></Header> */}
-        <BreadCrumbs
-          name={name}
-          parents={dm_directoryParents}
-          baseUrl={relativePrefixToRoot}
-          address={{}}
-
-        ></BreadCrumbs>
-        <div className="header-title ">
-          <Herobanner c_bannerTitle={_site.c_bannerTitle}></Herobanner>
-        </div>
         <div className="directory-root py-5 lg:py-[60px]">
           <div className="container">
             <div className="flex flex-wrap -mx-4">
@@ -141,8 +124,7 @@ const Root: Template<TemplateRenderProps> = ({
             </div>
           </div>
         </div>
-        {/* <Footer _site={_site} /> */}
-      </AnalyticsScopeProvider>
+   
     
 
      
