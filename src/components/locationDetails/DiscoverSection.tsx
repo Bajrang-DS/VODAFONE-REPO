@@ -20,7 +20,7 @@ const DiscoverSection = (props:any) => {
          <div className="px-6 py-4">{data.title && data.title != "undefined" &&<div className="font-bold text-xl mb-2">{data.title}</div>}
         {data.urls && data.urls.map((link:any, index:any)=>(
          
-          link.linkType && link.linkType != "undefined" &&  link.label && link.label != "undefined" && <li key={index}><Link href={link.linkType} eventName={link.label}>{link.label}</Link></li>
+          link.linkType && link.linkType != "undefined" &&  link.label && link.label != "undefined" && <li key={index}><Link href="#" eventName={link.label}>{link.label}</Link></li>
          
         )
         ) 
