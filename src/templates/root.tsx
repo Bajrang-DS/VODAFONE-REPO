@@ -61,8 +61,8 @@ export const config: TemplateConfig = {
 };
 
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  currentUrl = document.slug.toString() ;
-  return document.slug.toString() ;
+  currentUrl = document.slug.toString() + ".html";
+  return document.slug.toString() + ".html";
 };
 
 // export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
