@@ -268,13 +268,13 @@ const Country: Template<TemplateRenderProps> = ({
           ],
         }}
       />
-       <JsonLd<BreadcrumbList>
+       {/* <JsonLd<BreadcrumbList>
         item={{
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: breadcrumbScheme,
         }}
-      />
+      /> */}
       {/* <Header _site={_site}/> */}
        <AnalyticsProvider
         templateData={templateData}

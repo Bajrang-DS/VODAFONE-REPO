@@ -11,7 +11,7 @@ export const liveAPIKey = "3a58affb71208da4872659791cb78e07";
 
 export const googleMapsApiKey = "AIzaSyDZNQlSlEIkFAct5VzUtsP4dSbvOr2bE18";
 
-export const stagingBaseUrl ="https://main-sublimely--teenage--shark-sbx-pgsdemo-com.sbx.preview.pagescdn.com/";
+export const stagingBaseUrl ="https://master-agreeably--appalling--glider-sbx-pgsdemo-com.sbx.preview.pagescdn.com/";
 export const googleApikey = "AIzaSyDZNQlSlEIkFAct5VzUtsP4dSbvOr2bE18";
 
 export const savedFilterId = "";

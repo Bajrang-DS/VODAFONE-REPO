@@ -608,14 +608,14 @@ const City: Template<TemplateRenderProps> = ({
           ],
         }}
       />
-      <JsonLd<BreadcrumbList>
+      {/* <JsonLd<BreadcrumbList>
         item={{
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
 
           itemListElement: breadcrumbScheme,
         }}
-      />
+      /> */}
      <AnalyticsProvider
         templateData={templateData}
         enableDebugging={AnalyticsEnableDebugging}
