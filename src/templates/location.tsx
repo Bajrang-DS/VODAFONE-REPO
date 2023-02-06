@@ -717,6 +717,7 @@ const Location: Template<ExternalApiRenderData> = ({
       )}
       <AnalyticsScopeProvider name={""}>
       <Header _site={_site}/>
+     
         <AnalyticsScopeProvider name={"header"}>
         </AnalyticsScopeProvider>
         <BreadCrumbs
@@ -725,6 +726,7 @@ const Location: Template<ExternalApiRenderData> = ({
           baseUrl={relativePrefixToRoot}
           address={{}}
         ></BreadCrumbs>
+         {/* <Banner c_image={c_image}/> */}
         <LocationInformation
           prop={hours}
           deliveryHours={deliveryHours}

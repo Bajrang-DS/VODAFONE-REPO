@@ -10,6 +10,7 @@ export type Address = {
   countryCode: string;
 };
 type props = {
+  c_image: any;
   Name: any;
   TagLine: any;
   BackgroundImage: any;
@@ -29,6 +30,7 @@ type Banner = {
 */
 const Banner = (Data: props) => {
   const conversionDetails_primaryCTA = {
+    
     cid: "dc6937a6-345d-4c0f-b63f-79be3c29d7bc",
     cv: "3",
   };
@@ -37,7 +39,7 @@ const Banner = (Data: props) => {
       <div className="hero">
         <img
           className="hero-img"
-          src={Data.template == "location" ? Data.BackgroundImage : bannerImage} alt="banner" />
+          src={Data?.c_image?.url} alt="banner" />
         <div className="container mx-auto text-center">
           <h1>{Data.Name ? Data.Name : ""}</h1>
           <h2>{Data.TagLine ? Data.TagLine : ""}</h2>
