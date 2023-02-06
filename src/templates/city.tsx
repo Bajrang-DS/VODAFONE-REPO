@@ -98,7 +98,7 @@ let slugString = "";
 // };
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
 
-  return `${document.slug.toString()}`+ ".html";
+  return `${document.slug.toString()}`;
 
   // let url = "";
   // document.dm_directoryParents.map((i: any) => {
