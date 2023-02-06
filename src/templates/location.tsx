@@ -168,6 +168,7 @@ export const config: TemplateConfig = {
       "c_discoverSection",
       "c_faqs.question",
       "c_faqs.answer",
+      "c_aboutSection",
       // "c_techTeamTitle",
       // "c_ourservice",
       // "c_techTeamDescription",
@@ -511,7 +512,7 @@ const Location: Template<ExternalApiRenderData> = ({
     c_newsPhoto,
     c_Services,
     logo,
-  
+    c_aboutSection,
    
 
 
@@ -741,7 +742,7 @@ const Location: Template<ExternalApiRenderData> = ({
           additionalHoursText={additionalHoursText}
           hours={hours}
         />
-        <About  c_newsPhoto={c_newsPhoto} description={description}></About>
+        <About  c_aboutSection={c_aboutSection} ></About>
         <OfferSection offer={photoGallery}/>
         <Storefacility c_Services={c_Services}></Storefacility>
         <div className="w-full text-center">
@@ -764,7 +765,7 @@ const Location: Template<ExternalApiRenderData> = ({
           />
        
           
-       <div className=" flex justify-center"><div><Link href="/" eventName="ViewMoreLocation" className="bg-[#FF0000] p-2 text-white">View More Locations</Link></div></div>
+       <div className=" flex justify-center"><div><Link href="/locator" eventName="ViewMoreLocation" className="bg-[#FF0000] p-2 text-white">View More Locations</Link></div></div>
 
        <Footer _site={_site}/>
 

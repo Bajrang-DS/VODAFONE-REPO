@@ -110,13 +110,13 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         },
       },
       
-      // {
-      //   type: "meta",
-      //   attributes: {
-      //     name: "title",
-      //     content: `${metaTitle}`,
-      //   },
-      // },
+      {
+        type: "meta",
+        attributes: {
+          name: "title",
+          content: `${metaTitle}`,
+        },
+      },
       {
         type: "meta",
         attributes: {
@@ -245,14 +245,14 @@ const Country: Template<TemplateRenderProps> = ({
   let templateData = { document: document, __meta: __meta };
   let breadcrumbScheme = [];
 
-  // breadcrumbScheme.push({
-  //   "@type": "ListItem",
-  //   position: 1,
-  //   item: {
-  //     "@id": `${document._site.c_metaTags.canonicalURL  ? document._site.c_metaTags.canonicalURL + document.slug + ".html"  : stagingBaseUrl + document.slug  + ".html"}`,
-  //      name: document.name,
-  //   },
-  // });
+  breadcrumbScheme.push({
+    "@type": "ListItem",
+    position: 1,
+    item: {
+      "@id": `${stagingBaseUrl}${document.slug.toString()}.html`,
+       name: document.name,
+    },
+  });
   return (
     <>
     <JsonLd<Organization>

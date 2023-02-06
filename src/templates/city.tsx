@@ -555,20 +555,20 @@ const City: Template<TemplateRenderProps> = ({
   let templateData = { document: document, __meta: __meta };
   let breadcrumbScheme: any = [];
   let currentIndex: any = 0;
-  // dm_directoryParents &&
-  //   dm_directoryParents.map((i: any, index: any) => {
-  //     currentIndex = index;
-  //     if (index != 0) {
-  //       breadcrumbScheme.push({
-  //         "@type": "ListItem",
-  //         position: 1,
-  //         item: {
-  //           "@id": `${stagingBaseUrl}/${i.slug}.html`,
-  //           name: i.name,
-  //         },
-  //       });
-  //     }
-  //   });
+  dm_directoryParents &&
+    dm_directoryParents.map((i: any, index: any) => {
+      currentIndex = index;
+      if (index != 0) {
+        breadcrumbScheme.push({
+          "@type": "ListItem",
+          position: 1,
+          item: {
+            "@id": `${stagingBaseUrl}/${i.slug}.html`,
+            name: i.name,
+          },
+        });
+      }
+    });
   breadcrumbScheme.push({
     "@type": "ListItem",
     position: 1,
