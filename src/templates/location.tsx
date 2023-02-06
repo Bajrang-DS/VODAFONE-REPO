@@ -654,7 +654,7 @@ const Location: Template<ExternalApiRenderData> = ({
           },
         }}
       />
-      <JsonLd<BreadcrumbList>
+      {/* <JsonLd<BreadcrumbList>
         item={{
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
@@ -662,7 +662,7 @@ const Location: Template<ExternalApiRenderData> = ({
           itemListElement: breadcrumbScheme,
           // logo: document.logo.image.url,
         }}
-      />
+      /> */}
       
       <JsonLd<Store>
         item={{

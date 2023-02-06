@@ -41,9 +41,9 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
     "");
   let results: any = removeSpecialCharacters.replaceAll(" ", "-");
   if (!result.rawData.slug) {
-    url = `${result.id}-${results}.html`;
+    url = `${result.id}-${results}`;
   } else {
-    url = `${result.rawData.slug.toString()}.html`;
+    url = `${result.rawData.slug.toString()}`;
   }
 
   return (
