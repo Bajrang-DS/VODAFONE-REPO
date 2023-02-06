@@ -249,9 +249,9 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
     "");
   let result: any = removeSpecialCharacters.replaceAll(" ", "-");
   if (!document.slug) {
-    url = `${document.id}-${result}.html`;
+    url = `${document.id}-${result}`;
   } else {
-    url = `${document.slug.toString()}.html`;
+    url = `${document.slug.toString()}`;
   }
 
   return url;
@@ -275,7 +275,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
     /[&\/\\#^+()$~%.'":*?<>{}!@]/g,
     "");
    let result: any = removeSpecialCharacters.replaceAll(" ", "-");
-   let metaDescription = "Find your nearest Vodafone store and which services are available." + document.name;
+   let metaDescription = "Find your nearest Vodafone store and which services are available" + document.name;
    let metaTitle = document.name ? document.name : "Vodafone UK | Find a Store ";
    let metaAuthor =  "Vodafone location"
   let ogmetaImage =  "https://cdn.vodafone.co.uk/en/assets/images/large/IMG_10480.jpg"
@@ -594,8 +594,7 @@ const Location: Template<ExternalApiRenderData> = ({
           "@id":
             stagingBaseUrl +
             url + "/" +
-            document.dm_directoryParents[index].slug +
-            ".html",
+            document.dm_directoryParents[index].slug ,
           name: i.name,
         },
       });
@@ -617,8 +616,8 @@ const Location: Template<ExternalApiRenderData> = ({
           "@id":
             stagingBaseUrl +
             url +"/" +
-            document.dm_directoryParents[index].slug +
-            ".html",
+            document.dm_directoryParents[index].slug 
+         ,
           name: i.name,
         },
       });

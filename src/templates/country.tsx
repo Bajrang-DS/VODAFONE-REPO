@@ -235,7 +235,7 @@ const Country: Template<TemplateRenderProps> = ({
       <Link 
         eventName="Region"
         key={entity.slug}
-        href={"/"+ entity.slug + ".html"}
+        href={"/"+ entity.slug }
         className="hover:text-red"
       >
         {entity.name} ({entity.dm_directoryChildrenCount})
