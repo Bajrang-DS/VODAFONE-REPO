@@ -424,7 +424,7 @@ type ExternalApiData = TemplateProps & { externalApiData: nearByLocation };
 export const transformProps: TransformProps<ExternalApiData> = async (
   data: any
 ) => {
-  const url = `https://liveapi-sandbox.yext.com/v2/accounts/me/entities/geosearch?radius=1000&location=${data.document.yextDisplayCoordinate.latitude},${data.document.yextDisplayCoordinate.longitude}&api_key=3a58affb71208da4872659791cb78e07&v=20181201&resolvePlaceholders=true&entityTypes=location&limit=3`
+  const url = `https://liveapi-sandbox.yext.com/v2/accounts/me/entities/geosearch?radius=1000&location=${data.document.yextDisplayCoordinate.latitude},${data.document.yextDisplayCoordinate.longitude}&api_key=3a58affb71208da4872659791cb78e07&v=20181201&resolvePlaceholders=true&entityTypes=location&limit=4`
   const externalApiData = (await fetch(url).then((res: any) =>
     res.json()
   )) as nearByLocation;

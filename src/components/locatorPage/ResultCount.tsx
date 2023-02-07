@@ -69,5 +69,5 @@ export function ResultsCountDisplay({
     return <span key={`${index}-${value}`} className={classes}>{value}</span>
   });
   
-  return <div className={cssClasses.container}>{spanArray}</div>
+  return <div style={{textAlign:"right"}} className={cssClasses.container}>{spanArray}</div>
 }

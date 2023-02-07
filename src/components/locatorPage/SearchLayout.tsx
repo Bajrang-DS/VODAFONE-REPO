@@ -584,11 +584,11 @@ const SearchLayout = (item:any): JSX.Element => {
                   fieldApiName: "address.postalCode",
 
                 },
-                // {
-                //   entityType: "location",
-                //   fieldApiName: "address.region",
+                {
+                  entityType: "location",
+                  fieldApiName: "address.region",
 
-                //   }
+                  },
                   // {
                   //   entityType: "location",
                   //   fieldApiName: "address.countryCode",

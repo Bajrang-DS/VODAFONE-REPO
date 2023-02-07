@@ -98,7 +98,7 @@ let slugString = "";
 // };
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
 
-  return `${document.slug.toString()} `;
+  return `${document.slug.toString()}.html`;
 
   // let url = "";
   // document.dm_directoryParents.map((i: any) => {
@@ -306,10 +306,10 @@ const City: Template<TemplateRenderProps> = ({
       "");
     let result: any = removeSpecialCharacters.replaceAll(" ", "-");
     if(!entity.slug || entity.slug == "undefined"){
-      detailPageUrl = `${entity.id}-${result}`
+      detailPageUrl = `${entity.id}-${result}.html`
     }
     else{
-      detailPageUrl = `${entity.slug.toString()}`
+      detailPageUrl = `${entity.slug.toString()}.html`
     }
     return (
       <>
