@@ -1,4 +1,4 @@
-export const limit = 4;
+export const limit = 2;
 
 export const radius = 2500;
 
@@ -25,7 +25,7 @@ export const googleMapsConfig =  {
 };
 
 export const AnswerExperienceConfig =  {
-    limit:4,
+    limit:2,
     experienceKey: "vodaphone",
     locale:"en",
     apiKey: "969ae8d3e6e69666148f1b59610cc094",

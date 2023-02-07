@@ -123,8 +123,8 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
 
   let metaDescription =  "Find your nearest Vodafone store and which services are available." + document.name;
   let metaTitle = `Vodafone Store in ${document.name} | Find a Local Store`;
-  // let canonicalURL = document._site.c_metaTags.canonicalURL  ? document._site.c_metaTags.canonicalURL + document.dm_directoryParents[1].name.toLowerCase() +"/"+ document.dm_directoryParents[2].slug +"/"+ document.slug + ".html"  : stagingBaseUrl + document.dm_directoryParents[1].name.toLowerCase() +"/"+ document.dm_directoryParents[2].slug +"/"+ document.slug + ".html"
-  // let ogmetaImage = document._site.c_ogmetaTags.oGImage[0].url ? document._site.c_ogmetaTags.oGImage[0].url : "https://cdn.vodafone.co.uk/en/assets/images/large/IMG_10480.jpg"
+  let canonicalURL = document._site  ? document._site + document.dm_directoryParents[1].name.toLowerCase() +"/"+ document.dm_directoryParents[2].slug +"/"+ document.slug + ".html"  : stagingBaseUrl + document.dm_directoryParents[1].name.toLowerCase() +"/"+ document.dm_directoryParents[2].slug +"/"+ document.slug + ".html"
+  let ogmetaImage = document._site.url ? document._site.url : "https://cdn.vodafone.co.uk/en/assets/images/large/IMG_10480.jpg"
 
   return {
     title: metaTitle,
@@ -147,13 +147,13 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         },
       },
       
-      // {
-      //   type: "meta",
-      //   attributes: {
-      //     name: "title",
-      //     content: `${metaTitle}`,
-      //   },
-      // },
+      {
+        type: "meta",
+        attributes: {
+          name: "title",
+          content: `${metaTitle}`,
+        },
+      },
       {
         type: "meta",
         attributes: {
@@ -174,7 +174,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         type: "link",
         attributes: {
           rel: "canonical",
-          // href: ` ${canonicalURL}`,
+          href: ` ${canonicalURL}`,
         },
       },
       ///og tags
@@ -183,7 +183,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         type: "meta",
         attributes: {
           property: "og:url",
-          // content: `${canonicalURL}`,
+          content: `${canonicalURL}`,
         },
       },
       
@@ -205,7 +205,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         type: "meta",
         attributes: {
           name: "og:image",
-          // content: `${ogmetaImage}`
+          content: `${ogmetaImage}`
         },
       },
       
@@ -229,7 +229,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         type: "meta",
         attributes: {
           name: "twitter:url",
-          // content: `${canonicalURL}`,
+          content: `${canonicalURL}`,
         },
       },
       {

@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 import { twMerge, useComposedCssClasses } from '..//../hooks/useComposedCssClasses';
 import mapicon from "..//../images/placeholder.png";
 // import Groupnear from "..//../images/Groupnear.png";
-import Groupnear from "..//../images/map-center9.png"
+import Groupnear from "..//../images/map-center.png"
 import phone from "..//../images/phone.svg";
 import GetDirection from "../commons/GetDirection";
 import cluster from "../../images/cluser.png"
@@ -178,7 +178,7 @@ function UnwrappedGoogleMaps({
   const Usermarker1 = new google.maps.Marker({
     position,
     map,
-    icon: Groupnear,
+    // icon: Groupnear,
   });
   usermarker.current.push(Usermarker1);
 

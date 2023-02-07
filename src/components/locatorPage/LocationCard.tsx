@@ -49,8 +49,8 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
   return (
     <div className={`location result`} id={`result-${result.index}`}>
       <div className="relative  w-full">
-        <h2  className="onhighLight"><Link eventName="Name" href={`${url}`}>{result.rawData.name}</Link></h2>
-        <div className="miles "><span className="icon ">{svgIcons.locationmiles}</span> {metersToMiles(result.distance ?? 0)} mi</div>
+        <h2  className="onhighLight"><Link eventName="Name" href={`${url}`}><span style={{color:"red"}}>{result.rawData.name}</span></Link></h2>
+        <div className="miles "><span className="icon ">{svgIcons.locationmiles}</span> <span style={{color:"green"}}>{metersToMiles(result.distance ?? 0)} mi</span></div>
       </div>
 
       {/* <p className="text-sm text-slate-700">{address.line1}</p>
