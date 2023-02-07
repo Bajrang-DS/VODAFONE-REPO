@@ -4,7 +4,7 @@ export const radius = 2500;
 
 export const defaultQuery = "";
 
-export const baseApiUrl = "https://liveapi-sandbox.yext.com/v2/accounts/me";
+export const baseApiUrl = "https://liveapi-sandbox.yext.com/v2/accounts/me/entities/geosearch?";
 
 
 export const liveAPIKey = "3a58affb71208da4872659791cb78e07";

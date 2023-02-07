@@ -34,10 +34,10 @@ interface FilterSearchCssClasses
 }
 
 const builtInCssClasses: FilterSearchCssClasses = {
-  container: " w-full",
+  container: "mb-2 w-full",
   label: "mb-4 text-sm font-medium text-gray-900",
   dropdownContainer:
-    "absolute z-10 shadow-lg rounded-md border border-gray-300 bg-white pt-3 pb-1 px-4 mt-1",
+    "absolute z-10 shadow-lg w-full rounded-md border border-gray-300 bg-white pt-3 pb-1 px-4 mt-1",
   inputElement:
     "text-sm bg-white outline-none h-9 w-full p-2 rounded-md border border-gray-300 focus:border-blue-600",
   sectionContainer: "pb-2",
@@ -57,6 +57,9 @@ export interface FilterSearchProps {
   handleSetUserShareLocation: any;
   inputvalue: any;
   params: any;
+  displaymsg:any;
+  setDisplaymsg:any;
+  setSearchInputValue:any
 }
 
 type FilterHandle = {
@@ -76,6 +79,9 @@ const FilterSearch = React.forwardRef<FilterHandle, FilterSearchProps>(
       handleSetUserShareLocation,
       inputvalue,
       params,
+      displaymsg,
+      setDisplaymsg,
+      setSearchInputValue
     }: FilterSearchProps,
     ref
   ): JSX.Element => {
@@ -85,16 +91,12 @@ const FilterSearch = React.forwardRef<FilterHandle, FilterSearchProps>(
     const searchParamFields = searchFields.map((searchField) => {
       return { ...searchField, fetchEntities: false };
     });
-
-    // useEffect(()=>{
-    //   setInput(inputvalue);
-    // },[inputvalue]);
     React.useImperativeHandle(ref,() => {
       return {
         setInputValue: (value: String) => setInput(value)
       }
     })
-
+   console.log(displaymsg,"fisttimedispalydfsd")
     const cssClasses = useComposedCssClasses(
       builtInCssClasses,
       customCssClasses,
@@ -111,9 +113,10 @@ const FilterSearch = React.forwardRef<FilterHandle, FilterSearchProps>(
         searchParamFields
       )
     );
+  
 
     let sections: { results: Option[]; label?: string }[] = [];
-
+     
     if (filterSearchResponse) {
       sections = filterSearchResponse.sections.map((section) => {
         return {
@@ -172,9 +175,11 @@ const FilterSearch = React.forwardRef<FilterHandle, FilterSearchProps>(
 
     return (
       <div className={cssClasses.container}>
-        {/* <h1 className={cssClasses.label}>{label}</h1> */}
         <InputDropdown
           inputValue={input}
+          setSearchInputValue={setSearchInputValue}
+          displaymsg={displaymsg}
+          setDisplaymsg={setDisplaymsg}
           params={params}
           placeholder="Find Address, City or Postal Code"
           screenReaderInstructions={SCREENREADER_INSTRUCTIONS}
@@ -182,13 +187,10 @@ const FilterSearch = React.forwardRef<FilterHandle, FilterSearchProps>(
           onlyAllowDropdownOptionSubmissions={true}
           onInputChange={(newInput: any) => {
             setInput(newInput);
-            // console.log(newInput, "newinput");
             handleInputValue();
-            // handleSetUserShareLocation(newInput,true);
           }}
           onInputFocus={(input: any) => {
             executeFilterSearch(input);
-            // handleSetUserShareLocation(input,false);
           }}
           cssClasses={cssClasses}
           handleSetUserShareLocation={handleSetUserShareLocation}
@@ -205,7 +207,6 @@ const FilterSearch = React.forwardRef<FilterHandle, FilterSearchProps>(
                 optionIdPrefix={sectionId}
                 onFocusChange={(value) => {
                   setInput(value);
-                  // handleSetUserShareLocation(value,true);
                 }}
                 label={section.label}
                 cssClasses={cssClasses}

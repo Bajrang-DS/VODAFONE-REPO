@@ -23,7 +23,7 @@ export default function About(props: any) {
                   <div className="w-full md:w-1/2 about-sec px-5">
                     <h3 className="font-bold text-2xl ">{c_aboutSection?.title}</h3>
                   <p className="mt-2"> {c_aboutSection?.description}</p>
-                    <div className="mt-6"><Link className="bg-[#FF0000] p-4 text-white rounded-lg" href="#">{c_aboutSection?.cta?.label}</Link></div>
+                    <div className="mt-6"><Link className="bg-[#FF0000] text-white rounded-lg" href={c_aboutSection?.cta?.link ? c_aboutSection?.cta?.link : " "}>{c_aboutSection?.cta?.link ? (c_aboutSection?.cta?.label) :""}</Link></div>
                   </div>
                 </div>
               </div> 
