@@ -268,13 +268,13 @@ function UnwrappedGoogleMaps({
       bounds.extend(center);
       bounds.extend(position);
       map.fitBounds(bounds);
-      map.setZoom(8);
+      map.setZoom(2);
       // const zoom = map.getZoom() ?? 0;
       if(markerPins.current.length > 2){
-        map.setZoom(6);
+        map.setZoom(2);
       }
-      if (zoom > 12) {
-        map.setZoom(6);
+      if (zoom > 2) {
+        map.setZoom(2);
       }
       searchCenter = bounds.getCenter();
       searchZoom = map.getZoom();
@@ -303,7 +303,7 @@ function UnwrappedGoogleMaps({
             infoWindow.current.open(map, markerPins.current[index]);
             openInfoWindow = true;
           }
-          map.setZoom(20);
+          map.setZoom(2);
         })
         //  }
     }});
