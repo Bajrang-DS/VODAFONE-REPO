@@ -55,7 +55,7 @@ const BreadCrumbs = (props: data) => {
       <div className="container">
         <ul>
           <li>
-            <a href="#">
+            <a href="/">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="19.668"

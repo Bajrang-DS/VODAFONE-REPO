@@ -63,6 +63,7 @@ export const config: TemplateConfig = {
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
   currentUrl = document.slug.toString() + ".html";
   return document.slug.toString() + ".html";
+  // return 'index.html'
 };
 
 // export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
@@ -101,7 +102,11 @@ const Root: Template<TemplateRenderProps> = ({
         BackgroundImage={bannerImage}
         CtaButton={""}
       /> */}
-   
+     {/* <BreadCrumbs
+        name={name}
+        parents={dm_directoryParents}
+        baseUrl={relativePrefixToRoot}
+      ></BreadCrumbs> */}
 
         <div className="directory-root py-5 lg:py-[60px]">
           <div className="container">

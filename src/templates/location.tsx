@@ -180,10 +180,10 @@ export const config: TemplateConfig = {
       // "c_homeBroadbandDescription",
       // "c_specificDay",
       // "c_tradeInDescription",
-      // "dm_directoryParents.name",
-      // "dm_directoryParents.slug",
-      // "dm_directoryParents.dm_directoryChildrenCount",
-      // "dm_directoryParents.meta.entityType",
+      "dm_directoryParents.name",
+      "dm_directoryParents.slug",
+      "dm_directoryParents.dm_directoryChildrenCount",
+      "dm_directoryParents.meta.entityType",
       // "c_faqs.question",
       // "c_faqs.answer",
       // "c_aboutData",
@@ -210,54 +210,54 @@ var url = "";
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
 
 
-  //   let region_slug = "";
-  //   let city_slug = "";
-  //   if (document.address.region) {
-  //     region_slug = document.address.region
+    let region_slug = "";
+    let city_slug = "";
+    if (document.address.region) {
+      region_slug = document.address.region
 
-  //       .toLowerCase()
-  //       .replace(/ /g, "-")
-  //       .replace(/[^\w-]+/g, "");
-  //   }
-  //   if (document.address.country) {
-  //     city_slug = document.address.city
-  //       .toLowerCase()
-  //       .replace(/ /g, "-")
-  //       .replace(/[^\w-]+/g, "");
-  //   }
+        .toLowerCase()
+        .replace(/ /g, "-")
+        .replace(/[^\w-]+/g, "");
+    }
+    if (document.address.country) {
+      city_slug = document.address.city
+        .toLowerCase()
+        .replace(/ /g, "-")
+        .replace(/[^\w-]+/g, "");
+    }
 
-  //   let locationUrl = document.slug.toString() ;
-  //   if (region_slug && city_slug) {
-  //     locationUrl =
-  //       // "/" +
-  //       // city_slug +
-  //       // "/" +
-  //       // region_slug +
-  //       "/" +
-  //       document.slug.toString() ;
-  //   } else {
-  //     locationUrl = document.slug.toString()+".html";
-  //   }
-  //   return locationUrl;
-  // };
+    let locationUrl = document.slug.toString() ;
+    if (region_slug && city_slug) {
+      locationUrl =
+        "/" +
+        city_slug +
+        "/" +
+        region_slug +
+        "/" +
+        document.slug.toString() ;
+    } else {
+      locationUrl = document.slug.toString()+".html";
+    }
+    return locationUrl;
+  };
   // currentUrl = document.slug.toString() + ".html";
   // return document.slug.toString() + ".html";
  
-  var name: any = document.name.toLowerCase();
-  var string: any = name.toString();
-  let removeSpecialCharacters = string.replace(
-    /[&\/\\#^+()$~%.'":*?<>{}!@]/g,
-    "");
-  let result: any = removeSpecialCharacters.replaceAll(" ", "-");
-  if (!document.slug) {
-    url = `${document.id}-${result}`;
-  } else {
-    url = `${document.slug.toString()}`;
-  }
+  // var name: any = document.name.toLowerCase();
+  // var string: any = name.toString();
+  // let removeSpecialCharacters = string.replace(
+  //   /[&\/\\#^+()$~%.'":*?<>{}!@]/g,
+  //   "");
+  // let result: any = removeSpecialCharacters.replaceAll(" ", "-");
+  // if (!document.slug) {
+  //   url = `${document.id}-${result}`;
+  // } else {
+  //   url = `${document.slug.toString()}`;
+  // }
 
-  return url;
+  // return url;
 
-};
+// };
 
 export const getRedirects: GetRedirects<TemplateProps> = ({ document }) => {
   return [`index-old/${document.id.toString()}`];
@@ -369,13 +369,13 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: `${ogmetaImage}`,
         },
       },
-      // {
-      //   type: "meta",
-      //   attributes: {
-      //     property: "ogphoto",
-      //     content: icon,
-      //   },
-      // },
+      {
+        type: "meta",
+        attributes: {
+          property: "ogphoto",
+          content: icon,
+        },
+      },
       // /// twitter tag
       {
         type: "meta",
@@ -513,17 +513,15 @@ const Location: Template<ExternalApiRenderData> = ({
     c_Services,
     logo,
     c_aboutSection,
-   
+    // dm_directoryParents,
 
 
   } = document;
   //console.log(c_specificDay, "c_specificDay");
 
   let templateData = { document: document, __meta: __meta };
-  // let breadcrumbScheme: any = [];
+  let hoursSchema = [];
   let breadcrumbScheme = [];
-  // let hoursSchema = [];
-  let hoursSchema:any = [];
   for (var key in hours) {
     if (hours.hasOwnProperty(key)) {
       let openIntervalsSchema = "";
@@ -559,79 +557,82 @@ const Location: Template<ExternalApiRenderData> = ({
     }
   }
   document.dm_directoryParents &&
-  document.dm_directoryParents.map((i: any, index: any) => {
-    if (i.meta.entityType.id == "Vodafone_country") {
-      document.dm_directoryParents[index].name = document.dm_directoryParents[index].name;
-      document.dm_directoryParents[index].slug = document.dm_directoryParents[index].slug;
-  
-      breadcrumbScheme.push({
-        "@type": "ListItem",
-        position: index,
-        item: {
-          "@id":
-            stagingBaseUrl +  "/" +
-       
-            document.dm_directoryParents[index].slug +
-            ".html",
-          name: i.name,
-        },
-      });
-    } else if (i.meta.entityType.id == "Vodafone_region") {
-      let url = "";
-      document.dm_directoryParents.map((j: any) => {
-        if (
-          j.meta.entityType.id != "Vodafone_region" &&
-          j.meta.entityType.id != "Vodafone_city" &&
-          j.meta.entityType.id != "Vodafone_root"
-        ) {
-  
-          url = url + "/" +j.slug;
-        }
-      });
-      breadcrumbScheme.push({
-        "@type": "ListItem",
-        position: index,
-        item: {
-          "@id":
-            stagingBaseUrl +
-            url + "/" +
-            document.dm_directoryParents[index].slug ,
-          name: i.name,
-        },
-      });
-    } else if (i.meta.entityType.id == "Vodafone_city") {
-      let url = "";
-      document.dm_directoryParents.map((j: any) => {
-        if (
-          j.meta.entityType.id != "Vodafone_city" &&
-          j.meta.entityType.id != "Vodafone_root"
-        ) {
-  
-          url = url  + "/" + j.slug;
-        }
-      });
-      breadcrumbScheme.push({
-        "@type": "ListItem",
-        position: index,
-        item: {
-          "@id":
-            stagingBaseUrl +
-            url +"/" +
-            document.dm_directoryParents[index].slug 
-         ,
-          name: i.name,
-        },
-      });
-    }
-  });
-  
+    document.dm_directoryParents.map((i: any, index: any) => {
+      if (i.meta.entityType.id == "ce_country") {
+        document.dm_directoryParents[index].name =
+          document.dm_directoryParents[index].name;
+        document.dm_directoryParents[index].slug =
+          document.dm_directoryParents[index].slug;
+
+        breadcrumbScheme.push({
+          "@type": "ListItem",
+          position: index,
+          item: {
+            "@id":
+              stagingBaseUrl +
+
+              document.dm_directoryParents[index].slug +
+              ".html",
+            name: i.name,
+          },
+        });
+      } else if (i.meta.entityType.id == "ce_region") {
+        let url = "";
+        document.dm_directoryParents.map((j: any) => {
+          if (
+            j.meta.entityType.id != "ce_region" &&
+            j.meta.entityType.id != "ce_city" &&
+            j.meta.entityType.id != "ce_root"
+          ) {
+            console.log(j, "j");
+            url = url + j.slug;
+          }
+        });
+        breadcrumbScheme.push({
+          "@type": "ListItem",
+          position: index,
+          item: {
+            "@id":
+              stagingBaseUrl +
+              url + "/" +
+              document.dm_directoryParents[index].slug +
+              ".html",
+            name: i.name,
+          },
+        });
+      } else if (i.meta.entityType.id == "ce_city") {
+        let url = "";
+        document.dm_directoryParents.map((j: any) => {
+          if (
+            j.meta.entityType.id != "ce_city" &&
+            j.meta.entityType.id != "ce_root"
+          ) {
+            console.log(j, "j");
+            url = url + "/" + j.slug;
+          }
+        });
+        breadcrumbScheme.push({
+          "@type": "ListItem",
+          position: index,
+          item: {
+            "@id":
+              stagingBaseUrl +
+              url + "/" +
+              document.dm_directoryParents[index].slug +
+              ".html",
+            name: i.name,
+          },
+        });
+      }
+    });
+
   breadcrumbScheme.push({
-  "@type": "ListItem",
-  position: 4,
-  item: {
-    "@id": path+stagingBaseUrl ,
-    name: document.name,
-  },
+    "@type": "ListItem",
+    position: 4,
+    item: {
+      "@id": stagingBaseUrl + path,
+      name: document.name,
+    },
   });
   // var buttonLabel = c_booking.button.label ? c_booking.button.label : "Label" ;
   // var buttonLink = c_booking.button.link ? c_booking.button.link : "Link";
@@ -654,7 +655,7 @@ const Location: Template<ExternalApiRenderData> = ({
           },
         }}
       />
-      {/* <JsonLd<BreadcrumbList>
+      <JsonLd<BreadcrumbList>
         item={{
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
@@ -662,7 +663,7 @@ const Location: Template<ExternalApiRenderData> = ({
           itemListElement: breadcrumbScheme,
           // logo: document.logo.image.url,
         }}
-      /> */}
+      />
       
       <JsonLd<Store>
         item={{

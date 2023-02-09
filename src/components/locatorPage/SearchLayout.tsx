@@ -652,22 +652,23 @@ const SearchLayout = (item: any): JSX.Element => {
               </div>
             </PerfectScrollbar>
           </div>
-          <div className="right-block-locator">
+          <div className="right-block-locator pt-4 pb-2">
             {/* <MapboxMap<Location>
                     mapboxAccessToken="pk.eyJ1IjoicmFodWxyYXRob3JlIiwiYSI6ImNsOGVoM2NycjFsMDYzbnFrdGlpbGE4djEifQ.IWRyhB7OIqpBdtUtj0ki_w"
                     getCoordinate={(location) =>
                     location.rawData.yextDisplayCoordinate}
                     PinComponent={MapPin}
                 /> */}
+          
+              <GoogleMaps
 
-            <GoogleMaps
-              apiKey={googleMapsConfig.googleMapsApiKey}
-              centerLatitude={centerLatitude}
-              centerLongitude={centerLongitude}
-              defaultZoom={mapzoom}
-              showEmptyMap={true}
-            />
-          </div>
+                apiKey={googleMapsConfig.googleMapsApiKey}
+                centerLatitude={centerLatitude}
+                centerLongitude={centerLongitude}
+                defaultZoom={mapzoom}
+                showEmptyMap={true}
+              />
+            </div>
         </div>
       </div>
       {/* <Footer></Footer> */}

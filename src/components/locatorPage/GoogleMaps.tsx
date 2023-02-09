@@ -55,6 +55,7 @@ let openInfoWindow = false;
 
 const builtInCssClasses: Readonly<GoogleMapsCssClasses> = {
   googleMapsContainer:
+ 
     "w-full  h-48 md:h-96 lg:h-[calc(100vh_-_9.375rempx)] top-0   2xl:h-[calc(100vh_-_9.375rem)] order-1 lg:order-none z-[99]",
 };
 

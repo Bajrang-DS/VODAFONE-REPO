@@ -156,7 +156,7 @@ const DayRow = (props: DayRow) => {
         status = (
           <>
             <strong>
-              <span>Closed</span>
+              <span style={{color:"red"}}>Closed</span>
             </strong>{" "}
             - <span> Opens at {props.day?.openIntervals[0].start} </span>
           </>
@@ -182,7 +182,7 @@ const DayRow = (props: DayRow) => {
         status = (
           <>
             <strong>
-              <span> Closed</span>
+              <span style={{color:"red"}}> Closed</span>
             </strong>{" "}
             - <span> Opens at {props.day?.openIntervals[0].start} </span>
           </>
@@ -208,7 +208,7 @@ const DayRow = (props: DayRow) => {
         status = (
           <>
             <strong>
-              <span>Open</span>{" "}
+              <span style={{color:"green"}}>Open</span>{" "}
             </strong>
             - <span>Closes at {props.day?.openIntervals[0].end} </span>
           </>
@@ -231,7 +231,7 @@ const DayRow = (props: DayRow) => {
       status = openDays.length ? (
         <>
           <strong>
-            <span>Closed</span>{" "}
+            <span style={{color:"red"}}>Closed</span>{" "}
           </strong>
           -{" "}
           <span>
@@ -241,7 +241,7 @@ const DayRow = (props: DayRow) => {
       ) : (
         <>
           <strong>
-            <span> Closed</span>
+            <span style={{color:"red"}}> Closed</span>
           </strong>
         </>
       );

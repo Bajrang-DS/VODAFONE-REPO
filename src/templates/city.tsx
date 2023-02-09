@@ -98,18 +98,18 @@ let slugString = "";
 // };
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
 
-  return `${document.slug.toString()}.html`;
+  // return `${document.slug.toString()}.html`;
 
-  // let url = "";
-  // document.dm_directoryParents.map((i: any) => {
-  //   if (i.meta.entityType.id == 'Vodafone_country') {
-  //     url = i.slug + "/";
-  //   }
-  //   else if (i.meta.entityType.id == 'Vodafone_region') {
-  //     url = `${url}/${i.slug}/${document.slug.toString()}.html`
-  //   }
-  // })
-  // return  return `${document.slug.toString()}`;
+  var url: any = ""
+  document.dm_directoryParents.map((i: any) => {
+    if (i.meta.entityType.id == 'ce_country') {
+      url = `${i.slug}`
+    }
+    else if (i.meta.entityType.id == 'ce_region') {
+      url = `${url}/${i.slug}/${document.slug.toString()}.html`
+    }
+  })
+  return url;
 };
 
 

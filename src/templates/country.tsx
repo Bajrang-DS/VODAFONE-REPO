@@ -75,9 +75,9 @@ export const config: TemplateConfig = {
 };
 
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  // currentUrl = "/" + document.slug.toString() + ".html";
-  // return `${document.slug.toString()}`+ ".html";
-   return "index.html";
+  currentUrl = "/" + document.slug.toString() + ".html";
+  return `${document.slug.toString()}`+ ".html";
+  //  return "index.html";
 };
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   relativePrefixToRoot,
@@ -233,12 +233,12 @@ const Country: Template<TemplateRenderProps> = ({
   const childrenDivs = dm_directoryChildren.map((entity: any) => (
     <div className="w-1/2 storelocation-category md:w-1/3 lg:w-1/4 px-4">
       <Link 
-        eventName="Region"
-        key={entity.slug}
-        href={"/"+ entity.slug + ".html"}
-        className="hover:text-red"
-      >
-        {entity.name} ({entity.dm_directoryChildrenCount})
+          eventName="Region"
+          key={entity.slug}
+          href={slug +"/"+ entity.slug + ".html"}
+          className="hover:text-red"
+        >
+          {entity.name} ({entity.dm_directoryChildrenCount})
       </Link>
     </div>
   ));

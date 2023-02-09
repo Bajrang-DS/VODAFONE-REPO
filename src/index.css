@@ -276,14 +276,14 @@ flex-wrap flex-row items-center justify-end relative h-[29px]  py-1.5/* px-12*/}
 
 
 /* left listing */
-.scrollbar-container{@apply !h-[calc(100vh_-_16.875rem)] overflow-x-hidden overflow-y-auto}
+.scrollbar-container{@apply !h-[calc(100vh_-_10.875rem)] overflow-x-hidden overflow-y-auto}
 .ReactModal__Content--after-open{ @apply !rounded-xl}
 .ReactModalPortal button{ @apply hidden }
 .row{ @apply flex flex-wrap my-0 -mx-2.5}
 .popup-title{ @apply text-3xl text-center mb-6 border-b border-[#DFDFDF]  font-semibold text-purple-primary }
 .closeButton{ @apply absolute right-2 cursor-pointer top-3}
 .left-block-locator{ @apply w-full order-2 xl:order-none xl:w-[513px]   px-2.5}
-.right-block-locator{@apply w-full order-none h-4/5 xl:order-2 xl:w-[calc(100%_-_513px)] pr-2.5 pl-[5.65px]}
+.right-block-locator{@apply w-full order-none max-h-32 xl:order-2 xl:w-[calc(100%_-_513px)] pr-2.5 pl-[5.65px]}
 .ReactModal__Overlay{@apply !bg-black bg-opacity-70 !z-[999]}
 
 .location .location-info{@apply w-full}

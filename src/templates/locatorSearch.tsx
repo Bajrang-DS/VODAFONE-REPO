@@ -79,13 +79,13 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         },
       },
 
-      // {
-      //   type: "meta",
-      //   attributes: {
-      //     name: "title",
-      //     content: `${metaTitle}`,
-      //   },
-      // },
+      {
+        type: "meta",
+        attributes: {
+          name: "title",
+          content: `${metaTitle}`,
+        },
+      },
       {
         type: "meta",
         attributes: {

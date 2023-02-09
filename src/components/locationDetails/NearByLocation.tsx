@@ -217,7 +217,7 @@ const NearByLocation = (entities: props) => {
                         </h4>
                       
 
-                          <h4 className="pl-48">
+                          <h4 className="pl-20">
                             {metersToMiles(e.distance)} mi
                           </h4>
                         </div>
