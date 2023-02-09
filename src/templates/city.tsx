@@ -106,7 +106,7 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
       url = `${i.slug}`
     }
     else if (i.meta.entityType.id == 'ce_region') {
-      url = `${url}/${i.slug}/${document.slug.toString()}`
+      url = `${url}/${i.slug}/${document.slug.toString()}.html`
     }
   })
   return url;
@@ -309,7 +309,7 @@ const City: Template<TemplateRenderProps> = ({
       detailPageUrl = `${entity.id}-${result}.html`
     }
     else{
-      detailPageUrl = `${entity.slug.toString()}`
+      detailPageUrl = `${entity.slug.toString()}.html`
     }
     return (
       <>
