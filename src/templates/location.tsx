@@ -209,37 +209,50 @@ var url = "";
 
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
 
-
-    let region_slug = "";
-    let city_slug = "";
-    if (document.address.region) {
-      region_slug = document.address.region
-
-        .toLowerCase()
-        .replace(/ /g, "-")
-        .replace(/[^\w-]+/g, "");
+  var url: any = ""
+  document.dm_directoryParents.map((i: any) => {
+    if (i.meta.entityType.id == 'ce_country') {
+      url = `${i.slug}`
     }
-    if (document.address.country) {
-      city_slug = document.address.city
-        .toLowerCase()
-        .replace(/ /g, "-")
-        .replace(/[^\w-]+/g, "");
+    else if (i.meta.entityType.id == 'ce_region') {
+      url = `${url}/${i.slug}`
     }
+    else if (i.meta.entityType.id == "ce_city"){
+      url = `${url}/${i.slug}/${document.slug.toString()}`
+    }
+  })
+  return url;
+};
+    // let region_slug = "";
+    // let city_slug = "";
+    // if (document.address.region) {
+    //   region_slug = document.address.region
 
-    let locationUrl = document.slug.toString() ;
-    if (region_slug && city_slug) {
-      locationUrl =
-        "/" +
-        city_slug +
-        "/" +
-        region_slug +
-        "/" +
-        document.slug.toString() ;
-    } else {
-      locationUrl = document.slug.toString()+".html";
-    }
-    return locationUrl;
-  };
+    //     .toLowerCase()
+    //     .replace(/ /g, "-")
+    //     .replace(/[^\w-]+/g, "");
+    // }
+    // if (document.address.country) {
+    //   city_slug = document.address.city
+    //     .toLowerCase()
+    //     .replace(/ /g, "-")
+    //     .replace(/[^\w-]+/g, "");
+    // }
+
+    // let locationUrl = document.slug.toString() ;
+    // if (region_slug && city_slug) {
+    //   locationUrl =
+    //     "/" +
+    //     city_slug +
+    //     "/" +
+    //     region_slug +
+    //     "/" +
+    //     document.slug.toString() ;
+    // } else {
+    //   locationUrl = document.slug.toString();
+    // }
+    // return locationUrl;
+
   // currentUrl = document.slug.toString() + ".html";
   // return document.slug.toString() + ".html";
  
