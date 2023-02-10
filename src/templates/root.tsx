@@ -96,17 +96,15 @@ const Root: Template<TemplateRenderProps> = ({
         twitterHandle={c_globalData[0].twitterHandle}
         c_tikTok={c_globalData[0].c_tikTok}
       /> */}
-      {/* <Banner
-        Name={slug ? slug : ""}
-        TagLine={""}
-        BackgroundImage={bannerImage}
-        CtaButton={""}
-      /> */}
-     {/* <BreadCrumbs
+      {/* <Header _site={_site}/> */}
+      {/* <BreadCrumbs
         name={name}
         parents={dm_directoryParents}
         baseUrl={relativePrefixToRoot}
-      ></BreadCrumbs> */}
+        address={{}}
+      ></BreadCrumbs>
+       <div className="header-title ">
+          <Herobanner c_bannerTitle={_site.c_bannerTitle}></Herobanner> */}
 
         <div className="directory-root py-5 lg:py-[60px]">
           <div className="container">
@@ -114,7 +112,7 @@ const Root: Template<TemplateRenderProps> = ({
               {dm_directoryChildren.map((child: any) => {
                 return (
                   <>
-                    <div className="w-1/2 md:w-1/3 lg:w-1/4 px-4">
+                    <div className="w-full md:w-full lg:w-fi px-4 text-center">
                       <a
                         href={slug + "/" + child.slug + ".html"}
                         key={child.slug}
@@ -129,8 +127,8 @@ const Root: Template<TemplateRenderProps> = ({
             </div>
           </div>
         </div>
-   
-    
+        {/* </div> */}
+        {/* <Footer _site={_site}/> */}
 
      
 

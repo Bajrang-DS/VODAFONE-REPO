@@ -168,9 +168,9 @@ const NearByLocation = (entities: props) => {
                   "");
                 let result: any = removeSpecialCharacters.replaceAll(" ", "-");
                 if (!e.slug) {
-                  url = `${e.meta}-${result}.html`;
+                  url = `${e.meta}-${result}`;
                 } else {
-                  url = `${e.slug.toString()}.html`;
+                  url = `${e.slug.toString()}`;
                 }
 
                 var origin: any = null;
