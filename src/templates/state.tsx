@@ -249,6 +249,7 @@ const State: Template<TemplateRenderProps> = ({
     c_metaTitle,
     _site,
     __meta,
+    slug,
   } = document;
 
   var sortedChildren = dm_directoryChildren.sort(function (a: any, b: any) {
@@ -278,7 +279,7 @@ const State: Template<TemplateRenderProps> = ({
             <div className="w-1/2 storelocation-category md:w-1/3 lg:w-1/4 px-4">
               <Link
                 key={entity.slug}
-                href={"/" + entity.dm_directoryChildren[0].slug + ".html"}
+                href={slug + "/" + entity.dm_directoryChildren[0].slug }
                 className="hover:text-red"
                 eventName={entity.name}
               >
@@ -299,7 +300,7 @@ const State: Template<TemplateRenderProps> = ({
           url = `${entity.dm_directoryChildren[0].id}-${finalString}.html`;
           return (
             <div className="w-1/2 storelocation-category md:w-1/3 lg:w-1/4 px-4">
-              <Link key={entity.slug} href={"/" + url} className="hover:text-red" rel="noopener noreferrer" eventName={`LocationName`}>
+              <Link key={entity.slug} href={slug +"/" + url} className="hover:text-red" rel="noopener noreferrer" eventName={`LocationName`}>
                 {entity.name} ({entity.dm_directoryChildrenCount})
               </Link>
             </div>
@@ -311,7 +312,7 @@ const State: Template<TemplateRenderProps> = ({
           <div className="w-1/2 storelocation-category md:w-1/3 lg:w-1/4 px-4">
             <Link
               key={entity.slug}
-              href={"/" + entity.slug + ".html"}
+              href={slug + "/" + entity.slug + ".html"}
               className="hover:text-red"
               rel="noopener noreferrer" eventName={`name`}
             >
