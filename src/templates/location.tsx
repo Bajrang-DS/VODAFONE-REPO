@@ -779,7 +779,7 @@ const Location: Template<ExternalApiRenderData> = ({
           />
        
           
-       <div className=" flex justify-center"><div><Link href="/locator" eventName="ViewMoreLocation" className="bg-[#FF0000] p-2 text-white">View More Locations</Link></div></div>
+       <div className=" flex justify-center"><div><Link href="/locator.html" eventName="ViewMoreLocation" className="bg-[#FF0000] p-2 text-white">View More Locations</Link></div></div>
 
        <Footer _site={_site}/>
 
