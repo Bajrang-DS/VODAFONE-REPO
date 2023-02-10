@@ -280,10 +280,10 @@ const State: Template<TemplateRenderProps> = ({
               <Link
                 key={entity.slug}
                 href={slug + "/" + entity.slug +"/" + entity.dm_directoryChildren[0].slug }
-                className="hover:text-red"
+                className="text-blue hover:text-red"
                 eventName={entity.name}
               >
-                {entity.name} ({entity.dm_directoryChildrenCount})
+              {entity.name} ({entity.dm_directoryChildrenCount})
               </Link>
             </div>
           );
@@ -300,7 +300,7 @@ const State: Template<TemplateRenderProps> = ({
           url = `${entity.dm_directoryChildren[0].id}-${finalString}.html`;
           return (
             <div className="w-1/2 storelocation-category md:w-1/3 lg:w-1/4 px-4">
-              <Link key={entity.slug} href={slug +"/"+entity.slug + url} className="hover:text-red" rel="noopener noreferrer" eventName={`LocationName`}>
+              <Link key={entity.slug} href={slug +"/"+entity.slug + url} className="text-blue hover:text-red" rel="noopener noreferrer" eventName={`LocationName`}>
                 {entity.name} ({entity.dm_directoryChildrenCount})
               </Link>
             </div>
@@ -313,7 +313,7 @@ const State: Template<TemplateRenderProps> = ({
             <Link
               key={entity.slug}
               href={slug + "/" + entity.slug + ".html"}
-              className="hover:text-red"
+              className="text-blue hover:text-red"
               rel="noopener noreferrer" eventName={`name`}
             >
               {entity.name} ({entity.dm_directoryChildrenCount})
@@ -399,7 +399,7 @@ const State: Template<TemplateRenderProps> = ({
         template={"state"}
       /> */}
 
-      <h1 className="sec_heading mt-12" style={{ textAlign: "center" }}>
+      <h1 className="sec_heading mt-12" style={{ textAlign: "center", color:"Highlight" }}>
         Cities in {name}, {document.dm_directoryParents[1].name}{" "}
       </h1>
       <div className="directory-country nearby-sec">

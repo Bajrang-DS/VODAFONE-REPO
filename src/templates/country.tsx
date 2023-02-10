@@ -236,7 +236,7 @@ const Country: Template<TemplateRenderProps> = ({
           eventName="Region"
           key={entity.slug}
           href={slug +"/"+ entity.slug + ".html"}
-          className="hover:text-red"
+          className="text-blue hover:text-red"
         >
           {entity.name} ({entity.dm_directoryChildrenCount})
       </Link>
@@ -301,7 +301,7 @@ const Country: Template<TemplateRenderProps> = ({
         text={"Regions"}
         template={"country"}
       /> */}
-      <h1 className="sec_heading mt-12" style={{ textAlign: "center" }}>
+      <h1 className="sec_heading mt-12" style={{ textAlign: "center",color:"Highlight" }}>
         All Regions of {name}{" "}
       </h1>
       <div className="directory-country py-5 lg:py-[60px]">

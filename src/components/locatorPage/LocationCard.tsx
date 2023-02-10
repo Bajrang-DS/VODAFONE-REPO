@@ -85,14 +85,15 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                  </div>
 
               </div>
-              <div className={timeStatus + " daylist"} >
-                <Hours key={result.rawData.id} hours={hours} additionalHoursText={additionalHoursText} /></div>
+              <div className={timeStatus + " daylist"} > 
+                <Hours key={result.rawData.id} hours={hours} additionalHoursText={additionalHoursText} />
+                 </div>
             </div>
 
           </div>
         </div>
       </div>
-       <Modal  ourservice={result.rawData.c_ourservice}/>
+       {/* <Modal  ourservice={result.rawData.c_ourservice}/> */}
       <div className="store-link">
         
         {result.rawData.displayCoordinate ?

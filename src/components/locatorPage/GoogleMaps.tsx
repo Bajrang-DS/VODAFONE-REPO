@@ -455,24 +455,24 @@ function UnwrappedGoogleMaps({
           <div className="location-info">
             <div className="icon-row"><Address address={result.rawData.address} /> </div>
             {result.rawData.mainPhone && <div className="icon-row"> <span className="icon">{svgIcons.locatorphoneicon}</span><a href={"tel:" + result.rawData.mainPhone}>{result.rawData.mainPhone} </a></div>}
-
-            {result.rawData.hours && <div className="open-close">
-              <div className="hours-sec ">
-                <div className="OpenCloseStatus ">
-                  <div className="hours-labels icon-row">
-                    <span className="icon">{svgIcons.locationstatus}</span>
-                    <a className={result.rawData.timeStatus} href="javascript:void(0);">
-                      <OpenClose timezone={result.rawData.timezone} hours={result.rawData.hours} deliveryHours={result.rawData.hours}></OpenClose></a>
+            <div>
+              {result.rawData.hours && <div className="open-close">
+                <div className="hours-sec ">
+                  <div className="OpenCloseStatus">
+                    <div className="hours-labels icon-row">
+                      <span className="icon">{svgIcons.locationstatus}</span>
+                      <div className={result.rawData.timeStatus} >
+                        <OpenClose timezone={result.rawData.timezone} hours={result.rawData.hours} deliveryHours={result.rawData.hours}></OpenClose></div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>}
+              </div>}</div>
           </div >
           <div className="store-link">
 
-            {/* {result.rawData.displayCoordinate ?
-          <GetDirection label="Direction" buttonText="Direction" address={result.rawData.address} latitude={result.rawData.displayCoordinate?.latitude} longitude={result.rawData.displayCoordinate?.longitude} />
-          : <GetDirection label="Direction" address={result.rawData.address} buttonText="Direction" latitude={result.rawData.yextDisplayCoordinate?.latitude} longitude={result.rawData.yextDisplayCoordinate?.longitude} />} */}
+            {result.rawData.displayCoordinate ?
+              <GetDirection label="Direction" buttonText="Direction" address={result.rawData.address} latitude={result.rawData.displayCoordinate?.latitude} longitude={result.rawData.displayCoordinate?.longitude} />
+              : <GetDirection label="Direction" address={result.rawData.address} buttonText="Direction" latitude={result.rawData.yextDisplayCoordinate?.latitude} longitude={result.rawData.yextDisplayCoordinate?.longitude} />}
 
 
             <Link className="consulation" eventName={"Store Detail"} href={`${url}`}>

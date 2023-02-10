@@ -65,7 +65,7 @@ const BreadCrumbs = (props: data) => {
                 <path
                   d="M10.94,22.655V16.6h4.539v6.052h4.614V13.577h2.95L13.209,4.5,3.375,13.577h2.95v9.077Z"
                   transform="translate(-3.375 -4.5)"
-                  fill="#10106a"
+                  fill="DarkOrange"
                 />
               </svg>
             </a>
@@ -78,8 +78,8 @@ const BreadCrumbs = (props: data) => {
               {props.address && props.address.city ? (
                 <li>
                   {" "}
-                  <a href={props.baseUrl + props.address.city + ".html"}>
-                    {props.address.city ? props.address.city : ""}
+                <a href={props.baseUrl + props.address.city + ".html"}>
+                {props.address.city ? props.address.city : ""}
                   </a>
                 </li>
               ) : (
@@ -87,7 +87,7 @@ const BreadCrumbs = (props: data) => {
               )}
             </>
           )}
-          <li>{props && props.name}</li>
+           <li>{props && props.name}</li>
         </ul>
       </div>
     </div>
