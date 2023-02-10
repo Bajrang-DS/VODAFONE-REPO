@@ -44,7 +44,7 @@ import Herobanner from "../components/commons/Herobanner";
 
 
 export const getPath: GetPath<TemplateProps> = () => {
-  return "locator.html";
+  return `locator.html`;
 };
 
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
