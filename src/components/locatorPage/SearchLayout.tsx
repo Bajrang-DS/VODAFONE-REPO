@@ -652,7 +652,8 @@ const SearchLayout = (item: any): JSX.Element => {
               </div>
             </PerfectScrollbar>
           </div>
-          <div className="right-block-locator pt-4 pb-2">
+          <div className="right-block-locator pt-6">
+            {/* <h4>Vi</h4> */}
             {/* <MapboxMap<Location>
                     mapboxAccessToken="pk.eyJ1IjoicmFodWxyYXRob3JlIiwiYSI6ImNsOGVoM2NycjFsMDYzbnFrdGlpbGE4djEifQ.IWRyhB7OIqpBdtUtj0ki_w"
                     getCoordinate={(location) =>

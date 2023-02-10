@@ -55,8 +55,8 @@ let openInfoWindow = false;
 
 const builtInCssClasses: Readonly<GoogleMapsCssClasses> = {
   googleMapsContainer:
- 
-    "w-full  h-48 md:h-96 lg:h-[calc(100vh_-_9.375rempx)] top-0   2xl:h-[calc(100vh_-_9.375rem)] order-1 lg:order-none z-[99]",
+
+    "w-full  h-48 md:h-96 lg:h-[calc(100vh_-_4.75rem)] top-0   2xl:h-[calc(100vh_-_9.375rem)] order-1 lg:order-none z-[99]",
 };
 
 /**
@@ -91,7 +91,7 @@ function UnwrappedGoogleMaps({
     lat: centerLatitude,
     lng: centerLongitude
   });
-   const locationResults = useFetchResults() || [];
+  const locationResults = useFetchResults() || [];
   // const userlat = useSearchState(s => s.location.locationBias) || [];
 
   const cssClasses = useComposedCssClasses(builtInCssClasses, customCssClasses);
@@ -132,8 +132,8 @@ function UnwrappedGoogleMaps({
   };
   let openMapCenter = null;
   let openMapZoom = null;
-  let searchCenter:any = null;
-  let searchZoom:any = null;
+  let searchCenter: any = null;
+  let searchZoom: any = null;
   let stopAnimation = false;
   let currentMapZoom = 0;
   // let infoWindow = new google.maps.InfoWindow();
@@ -162,7 +162,7 @@ function UnwrappedGoogleMaps({
   const bounds = new google.maps.LatLngBounds();
   const markerPins = useRef<google.maps.Marker[]>([]);
   const usermarker = useRef<google.maps.Marker[]>([]);
-  const infoWindow =useRef(new google.maps.InfoWindow());
+  const infoWindow = useRef(new google.maps.InfoWindow());
 
   deleteMarkers();
   userdeleteMarkers();
@@ -271,7 +271,7 @@ function UnwrappedGoogleMaps({
       map.fitBounds(bounds);
       map.setZoom(2);
       // const zoom = map.getZoom() ?? 0;
-      if(markerPins.current.length > 2){
+      if (markerPins.current.length > 2) {
         map.setZoom(2);
       }
       if (zoom > 2) {
@@ -286,56 +286,58 @@ function UnwrappedGoogleMaps({
     for (let index = 0; index < elements.length; index++) {
       elements[index].addEventListener("click", (e) => {
         // let removeResult = document.getElementById(`result-${index}`)
-        if((e.target as HTMLElement).classList.contains("onhighLight")){ 
+        if ((e.target as HTMLElement).classList.contains("onhighLight")) {
           // alert("aleert2")
-        infoWindow.current?.close();
-        // alert("get")
-        //    alert('Hello'); 
-        // if (!openInfoWindow) {
-        //   openMapZoom = map.getZoom();
-        //   openMapCenter = map.getCenter();
-        // }
+          infoWindow.current?.close();
+          // alert("get")
+          //    alert('Hello'); 
+          // if (!openInfoWindow) {
+          //   openMapZoom = map.getZoom();
+          //   openMapCenter = map.getCenter();
+          // }
 
-        locationResults.map((result, r) => {
-          if (index == r) {
-            Infowindow(index, result);
-            addActiveGrid(index);
-            map.panTo(markerPins.current[index].getPosition());
-            infoWindow.current.open(map, markerPins.current[index]);
-            openInfoWindow = true;
-          }
-          map.setZoom(2);
-        })
-        //  }
-    }});
+          locationResults.map((result, r) => {
+            if (index == r) {
+              Infowindow(index, result);
+              addActiveGrid(index);
+              map.panTo(markerPins.current[index].getPosition());
+              infoWindow.current.open(map, markerPins.current[index]);
+              openInfoWindow = true;
+            }
+            map.setZoom(2);
+          })
+          //  }
+        }
+      });
     }
     Hover(markerPins, marker_hover_icon, marker_icon);
 
     for (let index = 0; index < elements.length; index++) {
       elements[index].addEventListener("click", (e) => {
         // let removeResult = document.getElementById(`result-${index}`)
-        if((e.target as HTMLElement).classList.contains("onhighLight")){
+        if ((e.target as HTMLElement).classList.contains("onhighLight")) {
           // alert("alert")
           infoWindow.current.close();
-        // alert("dfjgj")
-        //    alert('Hello');
-        if (!openInfoWindow) {
-          openMapZoom = map.getZoom();
-          openMapCenter = map.getCenter();
-        }
-
-        locationResults.map((result, r) => {
-          if (index == r) {
-            Infowindow(index, result);
-            ActiveGrid(index);
-            map.panTo(markerPins.current[index].getPosition());
-            infoWindow.current.open(map, markerPins.current[index]);
-            openInfoWindow = true;
+          // alert("dfjgj")
+          //    alert('Hello');
+          if (!openInfoWindow) {
+            openMapZoom = map.getZoom();
+            openMapCenter = map.getCenter();
           }
-          map.setZoom(15);
-        })
-        //  }
-    }});
+
+          locationResults.map((result, r) => {
+            if (index == r) {
+              Infowindow(index, result);
+              ActiveGrid(index);
+              map.panTo(markerPins.current[index].getPosition());
+              infoWindow.current.open(map, markerPins.current[index]);
+              openInfoWindow = true;
+            }
+            map.setZoom(15);
+          })
+          //  }
+        }
+      });
     }
   });
 
@@ -379,7 +381,7 @@ function UnwrappedGoogleMaps({
         text: markerLabel,
         color: "#fff",
       });
-      if(!openInfoWindow){
+      if (!openInfoWindow) {
         removeActiveGrid();
       }
     })
@@ -393,12 +395,12 @@ function UnwrappedGoogleMaps({
 
   //new
   //on close icon info window close
-  google.maps.event.addListener(infoWindow.current, 'closeclick', function() {
+  google.maps.event.addListener(infoWindow.current, 'closeclick', function () {
     infoWindow.current.close();
-       map?.setZoom(8)
+    map?.setZoom(8)
     //  zoomMapTo(6, searchCenter);
     removeActiveGrid();
-   
+
     // map.setZoom(8);
     // bounds.extend(center);
     openInfoWindow = false;
@@ -428,7 +430,7 @@ function UnwrappedGoogleMaps({
    * @param i 
    * @param result 
    */
-   function Infowindow(i: Number, result: any): void {
+  function Infowindow(i: Number, result: any): void {
     var url = "";
     var name: any = result.rawData.name.toLowerCase();
     var string1: any = name.toString();
@@ -437,49 +439,49 @@ function UnwrappedGoogleMaps({
       "");
     let results: any = removeSpecialCharacters.replaceAll(" ", "-");
     if (!result.rawData.slug) {
-      url = `${result.id}-${results}.html`;
+      url = `${result.id}-${results}`;
     } else {
-      url = `${result.rawData.slug.toString()}.html`;
+      url = `${result.rawData.slug.toString()}`;
     }
     const MarkerContent =
       (
         <div className={`location result`} id={`result-${result.index}`}>
-        <div className="relative w-full">
-          <h3><a href={`${result.rawData.slug}.html`}>{result.rawData.name}</a></h3>
-          <div className="miles"><span className="icon">{svgIcons.locationmiles}</span> {metersToMiles(result.distance ?? 0)} mi</div>
-        </div>
+          <div className="relative w-full">
+            <h3><a href={`${result.rawData.slug}`}><b><span style={{ color: "blue" }}>{result.rawData.name}</span></b></a></h3>
+            <div className="miles"><span className="icon">{svgIcons.locationmiles}</span> <span style={{ color: "green" }}> {metersToMiles(result.distance ?? 0)} mi</span></div>
+          </div>
 
 
-        <div className="location-info">
-          <div className="icon-row"><Address address={result.rawData.address} /> </div>
-          {result.rawData.mainPhone &&<div className="icon-row"> <span className="icon">{svgIcons.locatorphoneicon}</span><a href={"tel:" + result.rawData.mainPhone}>{result.rawData.mainPhone} </a></div>}
-          
-         {result.rawData.hours &&  <div className="open-close">
-            <div className="hours-sec ">
-              <div className="OpenCloseStatus ">
-                <div className="hours-labels icon-row">
-                  <span className="icon">{svgIcons.locationstatus}</span>
-                  <a className={result.rawData.timeStatus} href="javascript:void(0);">
-                    <OpenClose timezone={result.rawData.timezone} hours={result.rawData.hours} deliveryHours={result.rawData.hours}></OpenClose></a>
+          <div className="location-info">
+            <div className="icon-row"><Address address={result.rawData.address} /> </div>
+            {result.rawData.mainPhone && <div className="icon-row"> <span className="icon">{svgIcons.locatorphoneicon}</span><a href={"tel:" + result.rawData.mainPhone}>{result.rawData.mainPhone} </a></div>}
+
+            {result.rawData.hours && <div className="open-close">
+              <div className="hours-sec ">
+                <div className="OpenCloseStatus ">
+                  <div className="hours-labels icon-row">
+                    <span className="icon">{svgIcons.locationstatus}</span>
+                    <a className={result.rawData.timeStatus} href="javascript:void(0);">
+                      <OpenClose timezone={result.rawData.timezone} hours={result.rawData.hours} deliveryHours={result.rawData.hours}></OpenClose></a>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>}
-        </div >
-        <div className="store-link">
-        
-        {/* {result.rawData.displayCoordinate ?
+            </div>}
+          </div >
+          <div className="store-link">
+
+            {/* {result.rawData.displayCoordinate ?
           <GetDirection label="Direction" buttonText="Direction" address={result.rawData.address} latitude={result.rawData.displayCoordinate?.latitude} longitude={result.rawData.displayCoordinate?.longitude} />
           : <GetDirection label="Direction" address={result.rawData.address} buttonText="Direction" latitude={result.rawData.yextDisplayCoordinate?.latitude} longitude={result.rawData.yextDisplayCoordinate?.longitude} />} */}
-      
-      
-        <Link className="consulation" eventName={"Store Detail"}  href={`${url}`}>
-        {svgIcons.storeview}
-        Store Detail
-        </Link>
-      </div>
-      </div>
-      ); 
+
+
+            <Link className="consulation" eventName={"Store Detail"} href={`${url}`}>
+              {svgIcons.storeview}
+              Store Detail
+            </Link>
+          </div>
+        </div>
+      );
 
     let string = renderToString(MarkerContent);
     infoWindow.current.setContent(string);
@@ -533,7 +535,7 @@ function gridHover(markerPins: any, marker_hover_icon: any, marker_icon: any) {
       markerPins.current[index].setIcon(marker_icon);
       // addActiveGrid(index);
       // removeActiveGrid()
-      if(!openInfoWindow){
+      if (!openInfoWindow) {
         removeActiveGrid();
       }
       // if(inf)
