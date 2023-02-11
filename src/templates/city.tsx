@@ -287,7 +287,7 @@ const City: Template<TemplateRenderProps> = ({
     slugString += e.slug + "/";
   });
   const regionNames = new Intl.DisplayNames(["en"], { type: "region" });
-
+ 
   const childrenDivs = dm_directoryChildren.map((entity: any) => {
     var origin: any = null;
     if (entity.address.city) {
@@ -428,7 +428,19 @@ const City: Template<TemplateRenderProps> = ({
           </div>}
          
           <div className="store-link flex">
-            <Link
+          {/* <Link
+            data-ya-track="getdirections"
+            eventName={`getdirections`}
+            className="direction button before-icon"
+            onClick={() => getDirectionUrl(result.rawData)}
+            href="javascript:void(0);"
+            id="some-button"
+            rel="noopener noreferrer"
+            //conversionDetails={conversionDetails_direction}
+          >
+            <> Directions </>
+          </Link> */}
+            {/* <Link
               className="direction"
               onClick={() => {
                 getDirectionUrl(entity);
@@ -449,8 +461,8 @@ const City: Template<TemplateRenderProps> = ({
                   fill="#fff"
                 />
               </svg>{" "}
-              Get Directions
-            </Link>
+              Get Directions 
+            </Link>  */}
             <a className="view-details" href={`/${detailPageUrl}`}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -476,10 +488,19 @@ const City: Template<TemplateRenderProps> = ({
           </div>
         </div>
       </div>
+      
       {/* </AnalyticsScopeProvider>
       </AnalyticsProvider> */}
       </>
     );
+    function direction(){
+      getDirectionUrl(result.rawData)
+     }
+
+    google.maps.event.addListener(City.current, 'domready', (e: any) => {
+      const someButton = document.getElementById("direct");
+      someButton?.addEventListener("click", direction);
+      });
   });
  
   c_globalData &&

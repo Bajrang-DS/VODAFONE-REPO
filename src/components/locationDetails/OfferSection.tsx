@@ -21,7 +21,7 @@ const OfferSection = (props: any) => {
 
                 {/* OfferItem.url.link && OfferItem.url.link != "undefined" && OfferItem.url.label && OfferItem.url.label != "undefined" &&  */}
 
-                <div className='mt-4 pb-2'><Link href="#" className='bg-[#FF0000] p-2 text-white'>See Offer</Link></div>
+                {/* <div className='mt-4 pb-2'><Link href="#" className='bg-[#FF0000] p-2 text-white'>See Offer</Link></div> */}
               </div>
             </div>
          

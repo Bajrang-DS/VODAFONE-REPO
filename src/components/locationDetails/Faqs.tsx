@@ -72,7 +72,7 @@ const Faq = (faqData: Faq) => {
 
                       <>
                         <div className="faq-content">
-                          <p>{i.answer}</p>
+                          <p>{i.c_ans2}</p>
                         </div>
                       </>
                     </div>

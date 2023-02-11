@@ -168,6 +168,7 @@ export const config: TemplateConfig = {
       "c_discoverSection",
       "c_faqs.question",
       "c_faqs.answer",
+      "c_faqs.c_ans2",
       "c_aboutSection",
       // "c_techTeamTitle",
       // "c_ourservice",
@@ -738,7 +739,7 @@ const Location: Template<ExternalApiRenderData> = ({
                     name: i.question,
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: `<p>${i.answer}</p>`,
+                      text: `<p>${i.c_ans2}</p>`,
                     },
                   };
                 }),
