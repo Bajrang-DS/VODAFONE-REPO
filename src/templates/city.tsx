@@ -1,27 +1,18 @@
 import * as React from "react";
-// import Banner from "../components/banner";
-// import Header from "../../src/components/layouts/footer";
-// import Footer from "../../src/components/layouts/header";
 import Footer from "../components/layouts/footer";
 import favicon from "../images/vodafone-favIcon.ico";
 import getDirectionUrl from "../components/commons/GetDirection";
 import Header from "../../src/components/layouts/header";
 import BreadCrumbs from "../components/layouts/BreadCrumbs";
 import { AnalyticsEnableDebugging, AnalyticsEnableTrackingCookie } from "../types/constants";
-// import { stagingBaseUrl } from "../constants";
-// import bannerImage from "../images/app-bg.png";
-// import favicon from "../images/favicon-live.png";
 import {
   AnalyticsProvider,
   AnalyticsScopeProvider,
 } from "@yext/pages/components";
 import { Link } from "@yext/pages/components";
-// import Logo from "../images/logo.svg";
-
 import "../index.css";
 var currentUrl = "";
 import "../index.css";
-// import "../main.css";
 import {
   Template,
   GetPath,
@@ -111,9 +102,6 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
   })
   return url;
 };
-
-
-
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   relativePrefixToRoot,
   path,
