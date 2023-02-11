@@ -502,13 +502,13 @@ function UnwrappedGoogleMaps({
         </div>
       );
         
-    function abcd(){
+    function direction(){
       getDirectionUrl(result.rawData)
      }
 
     google.maps.event.addListener(infoWindow.current, 'domready', (e: any) => {
       const someButton = document.getElementById("direct");
-      someButton?.addEventListener("click", abcd);
+      someButton?.addEventListener("click", direction);
       });
      
      let string = renderToString(MarkerContent);

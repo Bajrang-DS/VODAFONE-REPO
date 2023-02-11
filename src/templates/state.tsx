@@ -279,6 +279,7 @@ const State: Template<TemplateRenderProps> = ({
               <Link
                 key={entity.slug}
                 href={slug + "/" + entity.slug +"/" + entity.dm_directoryChildren[0].slug }
+                //href={slug + "/" + entity.slug + ".html"}
                 className="text-blue hover:text-red"
                 eventName={entity.name}
               >
