@@ -209,38 +209,39 @@ export const config: TemplateConfig = {
 var url = "";
 
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-    var url: any = ""
-  document?.dm_directoryParents?.map((i: any) => {
-    if (i.meta.entityType.id == 'ce_country') {
-      url = `${i.slug}`
-    }
-    else if (i.meta.entityType.id == 'ce_region') {
-      url = `${url}/${i.slug}`
-    }
-    else if (i.meta.entityType.id == "ce_city"){
-      url = `${url}/${i.slug}`
-    }
-  })
-  return `${url}/${document.slug.toString()}`;
-  // return url = `${url}/${i.slug}/${document.slug.toString()}`
-};
+    var URL: any = ""
 
-//   var url = "";
-//   var name: any = document.name.toLowerCase();
-//   var string: any = name.toString();;
-//   let result: any = string.replaceAll(" ", "-");
-//   document.dm_directoryParents?.map((result: any, i: number) => {
-//     if (i > 0) {
-//       url += result.slug + "/"
+//   document?.dm_directoryParents?.map((i: any) => {
+//     if (i.meta.entityType.id == 'ce_country') {
+//       URL = `${i.slug}`
+//     }
+//     else if (i.meta.entityType.id == 'ce_region') {
+//       URL = `${url}/${i.slug}`
+//     }
+//     else if (i.meta.entityType.id == "ce_city"){
+//       URL = `${url}/${i.slug}/${document.slug.toString()}`
 //     }
 //   })
-//   if (!document.slug) {
-//     url += `${result.slug}`;
-//   } else {
-//     url += `${document.slug.toString()}`;
-//   }
-//  return url;
+//   return URL;
+//   // return url = `${url}/${i.slug}/${document.slug.toString()}`
 // };
+
+  var url = "";
+  var name: any = document.name.toLowerCase();
+  var string: any = name.toString();;
+  let result: any = string.replaceAll(" ", "-");
+  document.dm_directoryParents?.map((result: any, i: number) => {
+    if (i > 0) {
+      url += result.slug + "/"
+    }
+  })
+  if (!document.slug) {
+    url += `${result.slug}`;
+  } else {
+    url += `${document.slug.toString()}`;
+  }
+ return url;
+};
 
 
 //     // let region_slug = "";
