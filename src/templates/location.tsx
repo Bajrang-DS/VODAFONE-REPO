@@ -244,54 +244,7 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
 };
 
 
-//     // let region_slug = "";
-    // let city_slug = "";
-    // if (document.address.region) {
-    //   region_slug = document.address.region
 
-    //     .toLowerCase()
-    //     .replace(/ /g, "-")
-    //     .replace(/[^\w-]+/g, "");
-    // }
-    // if (document.address.country) {
-    //   city_slug = document.address.city
-    //     .toLowerCase()
-    //     .replace(/ /g, "-")
-    //     .replace(/[^\w-]+/g, "");
-    // }
-
-    // let locationUrl = document.slug.toString() ;
-    // if (region_slug && city_slug) {
-    //   locationUrl =
-    //     "/" +
-    //     city_slug +
-    //     "/" +
-    //     region_slug +
-    //     "/" +
-    //     document.slug.toString() ;
-    // } else {
-    //   locationUrl = document.slug.toString();
-    // }
-    // return locationUrl;
-
-  // currentUrl = document.slug.toString() + ".html";
-  // return document.slug.toString() + ".html";
- 
-  // var name: any = document.name.toLowerCase();
-  // var string: any = name.toString();
-  // let removeSpecialCharacters = string.replace(
-  //   /[&\/\\#^+()$~%.'":*?<>{}!@]/g,
-  //   "");
-  // let result: any = removeSpecialCharacters.replaceAll(" ", "-");
-  // if (!document.slug) {
-  //   url = `${document.id}-${result}`;
-  // } else {
-  //   url = `${document.slug.toString()}`;
-  // }
-
-  // return url;
-
-// };
 
 export const getRedirects: GetRedirects<TemplateProps> = ({ document }) => {
   return [`index-old/${document.id.toString()}`];
