@@ -2,14 +2,12 @@
 import * as React from "react";
 import Hours from "../commons/hours";
 import CustomMap from "./CustomMap";
-import getDirectionUrl from "../../../src/getDirection";
-// import GetDirection from "../commons/GetDirection";
+import getDirectionUrl from "../commons/GetDirection";
 // import map from "../images/map.jpg";
 // import favorite from "../images/favorite.svg";
 // import justeats from "../images/justeats.svg";
 // import uber_eats from "../images/uber-eats.svg";
 // import deliveroo from "../images/deliveroo.svg";
-// import GetDirection from "../commons/GetDirection";
 import Faq from "../locationDetails/Faqs"
 import Service from "./service";
 import { Link, useAnalytics } from "@yext/pages/components";

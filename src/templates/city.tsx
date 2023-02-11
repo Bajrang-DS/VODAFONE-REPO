@@ -4,10 +4,10 @@ import * as React from "react";
 // import Footer from "../../src/components/layouts/header";
 import Footer from "../components/layouts/footer";
 import favicon from "../images/vodafone-favIcon.ico";
+import getDirectionUrl from "../components/commons/GetDirection";
 import Header from "../../src/components/layouts/header";
 import BreadCrumbs from "../components/layouts/BreadCrumbs";
 import { AnalyticsEnableDebugging, AnalyticsEnableTrackingCookie } from "../types/constants";
-// import GetDirection from "../components/GetDirection";
 // import { stagingBaseUrl } from "../constants";
 // import bannerImage from "../images/app-bg.png";
 // import favicon from "../images/favicon-live.png";
@@ -481,64 +481,7 @@ const City: Template<TemplateRenderProps> = ({
       </>
     );
   });
-  function getDirectionUrl(entitiy: any) {
-    var origin: any = null;
-    if (entitiy.address.city) {
-      origin = entitiy.address.city;
-    } else if (entitiy.address.region) {
-      origin = entitiy.address.region;
-    } else {
-      origin = entitiy.address.country;
-    }
-    if (navigator.geolocation) {
-      const error = (error: any) => {
-        var message_string =
-          "Unable to determine your location. please share your location";
-        // if (confirm(message_string) != true) {
-        //   var getDirectionUrl =
-        //     "https://www.google.com/maps/dir/?api=1&destination=" +
-        //     entitiy.yextDisplayCoordinate.latitude +
-        //     "," +
-        //     entitiy.yextDisplayCoordinate.longitude +
-        //     "&origin=" +
-        //     origin;
-
-        //   window.open(getDirectionUrl, "_blank");
-        // } else {
-        //   return false;
-        // }
-        var getDirectionUrl =
-          "https://www.google.com/maps/dir/?api=1&destination=" +
-          entitiy.yextDisplayCoordinate.latitude +
-          "," +
-          entitiy.yextDisplayCoordinate.longitude +
-          "&origin=" +
-          origin;
-
-        window.open(getDirectionUrl, "_blank");
-      };
-      navigator.geolocation.getCurrentPosition(
-        function (position) {
-          let currentLatitude = position.coords.latitude;
-          let currentLongitude = position.coords.longitude;
-          let getDirectionUrl =
-            "https://www.google.com/maps/dir/?api=1&destination=" +
-            entitiy.yextDisplayCoordinate.latitude +
-            "," +
-            entitiy.yextDisplayCoordinate.longitude +
-            "&origin=" +
-            currentLatitude +
-            "," +
-            currentLongitude;
-          window.open(getDirectionUrl, "_blank");
-        },
-        error,
-        {
-          timeout: 10000,
-        }
-      );
-    }
-  }
+ 
   c_globalData &&
     c_globalData.map((i: any) => {
       address = i.address ? i.address : [];

@@ -208,22 +208,41 @@ export const config: TemplateConfig = {
 var url = "";
 
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
+  //   var url: any = ""
+  // document?.dm_directoryParents?.map((i: any) => {
+  //   if (i.meta.entityType.id == 'ce_country') {
+  //     url = `${i.slug}`
+  //   }
+  //   else if (i.meta.entityType.id == 'ce_region') {
+  //     url = `${url}/${i.slug}`
+  //   }
+  //   else if (i.meta.entityType.id == "ce_city"){
+  //     url = `${url}/${i.slug}/${document.slug.toString()}`
+  //   }
+  // })
+  // return url;
+  // return url = `${url}/${i.slug}/${document.slug.toString()}`
+// };
 
-  var url: any = ""
-  document.dm_directoryParents.map((i: any) => {
-    if (i.meta.entityType.id == 'ce_country') {
-      url = `${i.slug}`
-    }
-    else if (i.meta.entityType.id == 'ce_region') {
-      url = `${url}/${i.slug}`
-    }
-    else if (i.meta.entityType.id == "ce_city"){
-      url = `${url}/${i.slug}/${document.slug.toString()}`
+  var url = "";
+  var name: any = document.name.toLowerCase();
+  var string: any = name.toString();;
+  let result: any = string.replaceAll(" ", "-");
+  document.dm_directoryParents?.map((result: any, i: number) => {
+    if (i > 0) {
+      url += result.slug + "/"
     }
   })
-  return url;
+  if (!document.slug) {
+    url += `${result.slug}`;
+  } else {
+    url += `${document.slug.toString()}`;
+  }
+ return url;
 };
-    // let region_slug = "";
+
+
+//     // let region_slug = "";
     // let city_slug = "";
     // if (document.address.region) {
     //   region_slug = document.address.region
@@ -570,7 +589,7 @@ const Location: Template<ExternalApiRenderData> = ({
     }
   }
   document.dm_directoryParents &&
-    document.dm_directoryParents.map((i: any, index: any) => {
+    document.dm_directoryParents?.map((i: any, index: any) => {
       if (i.meta.entityType.id == "ce_country") {
         document.dm_directoryParents[index].name =
           document.dm_directoryParents[index].name;
@@ -591,7 +610,7 @@ const Location: Template<ExternalApiRenderData> = ({
         });
       } else if (i.meta.entityType.id == "ce_region") {
         let url = "";
-        document.dm_directoryParents.map((j: any) => {
+        document.dm_directoryParents?.map((j: any) => {
           if (
             j.meta.entityType.id != "ce_region" &&
             j.meta.entityType.id != "ce_city" &&
@@ -615,7 +634,7 @@ const Location: Template<ExternalApiRenderData> = ({
         });
       } else if (i.meta.entityType.id == "ce_city") {
         let url = "";
-        document.dm_directoryParents.map((j: any) => {
+        document.dm_directoryParents?.map((j: any) => {
           if (
             j.meta.entityType.id != "ce_city" &&
             j.meta.entityType.id != "ce_root"
@@ -713,7 +732,7 @@ const Location: Template<ExternalApiRenderData> = ({
 
               mainEntity:
               c_faqs &&
-              c_faqs.map((i: any) => {
+              c_faqs?.map((i: any) => {
                   return {
                     "@type": "Question",
                     name: i.question,

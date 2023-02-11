@@ -8,7 +8,6 @@ import mapicon from "..//../images/placeholder.png";
 // import Groupnear from "..//../images/Groupnear.png";
 import Groupnear from "..//../images/map-center.png"
 import phone from "..//../images/phone.svg";
-import GetDirection from "../commons/GetDirection";
 import cluster from "../../images/cluser.png"
 import MapiconHover from "..//../images/markehover.png";
 // import Hours from '..//../components/commons/hours';
@@ -22,6 +21,8 @@ import { svgIcons } from '../../types/svgicon';
 import OpenClose from '../commons/openclose';
 import useFetchResults from '../../hooks/useFetchResults';
 import { Link } from '@yext/pages/components';
+import getDirectionUrl from '../commons/GetDirection';
+import { StaticData } from '../../../site-global/staticData';
 // import Phone from '../commons/phone';
 /**
  * CSS class interface for the {@link GoogleMaps} component
@@ -68,6 +69,7 @@ const builtInCssClasses: Readonly<GoogleMapsCssClasses> = {
  * @public
  */
 export function GoogleMaps(props: GoogleMapsProps) {
+
   return (
     <div>
       <Wrapper apiKey={props.apiKey}>
@@ -93,6 +95,7 @@ function UnwrappedGoogleMaps({
   });
   const locationResults = useFetchResults() || [];
   // const userlat = useSearchState(s => s.location.locationBias) || [];
+  
 
   const cssClasses = useComposedCssClasses(builtInCssClasses, customCssClasses);
   const noResults = !locationResults.length;
@@ -431,6 +434,11 @@ function UnwrappedGoogleMaps({
    * @param result 
    */
   function Infowindow(i: Number, result: any): void {
+    const { address, hours, additionalHoursText, mainPhone, timezone, c_heading } = result.rawData;
+    const conversionDetails = {
+      cid: "e1cd62c2-74f9-4d8a-ade1-b8e9001c4df4",
+      cv: "1",
+    };
     var url = "";
     var name: any = result.rawData.name.toLowerCase();
     var string1: any = name.toString();
@@ -451,7 +459,6 @@ function UnwrappedGoogleMaps({
             <div className="miles"><span className="icon">{svgIcons.locationmiles}</span> <span style={{ color: "green" }}> {metersToMiles(result.distance ?? 0)} mi</span></div>
           </div>
 
-
           <div className="location-info">
             <div className="icon-row"><Address address={result.rawData.address} /> </div>
             {result.rawData.mainPhone && <div className="icon-row"> <span className="icon">{svgIcons.locatorphoneicon}</span><a href={"tel:" + result.rawData.mainPhone}>{result.rawData.mainPhone} </a></div>}
@@ -459,22 +466,34 @@ function UnwrappedGoogleMaps({
               {result.rawData.hours && <div className="open-close">
                 <div className="hours-sec ">
                   <div className="OpenCloseStatus">
-                    <div className="hours-labels icon-row">
+                    <div className="hours-labels icon-row" style={{cursor:"unset"}}>
                       <span className="icon">{svgIcons.locationstatus}</span>
-                      <div className={result.rawData.timeStatus} >
-                        <OpenClose timezone={result.rawData.timezone} hours={result.rawData.hours} deliveryHours={result.rawData.hours}></OpenClose></div>
+                      {/* <div className={result.rawData.timeStatus} > */}
+                        {/* <OpenClose timezone={result.rawData.timezone} hours={result.rawData.hours} deliveryHours={result.rawData.hours}></OpenClose></div> */}
+                        <OpenClose
+                          timezone={result.rawData.timzone}
+                          hours={result.rawData.hours}
+                          deliveryHours={result.rawData.hours}
+                          ></OpenClose>
                     </div>
                   </div>
                 </div>
               </div>}</div>
           </div >
           <div className="store-link">
-
-            {result.rawData.displayCoordinate ?
-              <GetDirection label="Direction" buttonText="Direction" address={result.rawData.address} latitude={result.rawData.displayCoordinate?.latitude} longitude={result.rawData.displayCoordinate?.longitude} />
-              : <GetDirection label="Direction" address={result.rawData.address} buttonText="Direction" latitude={result.rawData.yextDisplayCoordinate?.latitude} longitude={result.rawData.yextDisplayCoordinate?.longitude} />}
-
-
+          <Link
+            data-ya-track="getdirections"
+            eventName={`getdirections`}
+            className="direction button before-icon"
+            onClick={() => getDirectionUrl(result.rawData)}
+            href="javascript:void(0);"
+            id="direct"
+            rel="noopener noreferrer"
+            //conversionDetails={conversionDetails_direction}
+          >
+            <> Direction </>
+          </Link>
+            
             <Link className="consulation" eventName={"Store Detail"} href={`${url}`}>
               {svgIcons.storeview}
               Store Detail
@@ -482,11 +501,23 @@ function UnwrappedGoogleMaps({
           </div>
         </div>
       );
+        
+    function abcd(){
+      getDirectionUrl(result.rawData)
+     }
 
-    let string = renderToString(MarkerContent);
-    infoWindow.current.setContent(string);
-
+    google.maps.event.addListener(infoWindow.current, 'domready', (e: any) => {
+      const someButton = document.getElementById("direct");
+      someButton?.addEventListener("click", abcd);
+      });
+     
+     let string = renderToString(MarkerContent);
+     infoWindow.current.setContent(string);
   }
+
+ 
+
+
 
   function deleteMarkers(): void {
     for (let i = 0; i < markerPins.current.length; i++) {

@@ -5,7 +5,7 @@ import { Location } from "..//../types/search/locations";
 import Hours from '..//../components/commons/hours';
 import Address from "..//../components/commons/Address";
 // import phone from "..//../images/phone.svg";
-import GetDirection from "../commons/GetDirection";
+import getDirectionUrl from "../commons/GetDirection";
 // import addressicon from "../../images/marker.svg";
 // import watch from "../../images/watch.svg";
 import { formatPhoneNumber, formatPhoneNumberIntl } from 'react-phone-number-input';
@@ -96,11 +96,18 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
        {/* <Modal  ourservice={result.rawData.c_ourservice}/> */}
       <div className="store-link">
         
-        {result.rawData.displayCoordinate ?
-          <GetDirection label="Direction" buttonText="Direction" address={address} latitude={result.rawData.displayCoordinate?.latitude} longitude={result.rawData.displayCoordinate?.longitude} />
-          : <GetDirection label="Direction" address={address} buttonText="Direction" latitude={result.rawData.yextDisplayCoordinate?.latitude} longitude={result.rawData.yextDisplayCoordinate?.longitude} />}
-        {/* <button onClick={getDirectionUrl} >getlocation</button> */}
-        {/* {result.rawData.c_heading.viewDetails? */}
+      <Link
+            data-ya-track="getdirections"
+            eventName={`getdirections`}
+            className="direction button before-icon"
+            onClick={() => getDirectionUrl(result.rawData)}
+            href="javascript:void(0);"
+            id="some-button"
+            rel="noopener noreferrer"
+            //conversionDetails={conversionDetails_direction}
+          >
+            <> Directions </>
+          </Link>
       
         <Link className="consulation" eventName={"Store Detail"}  href={`${url}`}>
         {svgIcons.storeview}

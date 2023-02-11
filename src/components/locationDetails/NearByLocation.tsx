@@ -6,6 +6,7 @@ import { svgIcons } from "../../types/svgicon";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { Link } from "@yext/pages/components";
 import OpenClose from "../commons/openclose";
+import getDirectionUrl from "../commons/GetDirection";
 import Modal from "../commons/servicePopup";
 // const metersToMiles = (meters: number) => {
 //   const miles = meters * 0.000621371;
@@ -64,63 +65,7 @@ const NearByLocation = (entities: props) => {
     cid: "de598c07-b53c-407a-89f8-adc289ae9d62",
     cv: "2",
   };
-  function getDirectionUrl(entitiy: any) {
-    var origin: any = null;
-    if (entitiy.address.city) {
-      origin = entitiy.address.city;
-    } else if (entitiy.address.region) {
-      origin = entitiy.address.region;
-    } else {
-      origin = entitiy.address.country;
-    }
-    if (navigator.geolocation) {
-      const error = (error: any) => {
-        // var message_string =
-        //   "Unable to determine your location. please share your location";
-        // if (confirm(message_string) != true) {
-        //   var getDirectionUrl =
-        //     "https://www.google.com/maps/dir/?api=1&destination=" +
-        //     entitiy.yextDisplayCoordinate.latitude +
-        //     "," +
-        //     entitiy.yextDisplayCoordinate.longitude +
-        //     "&origin=" +
-        //     origin;
 
-        //   window.open(getDirectionUrl, "_blank");
-        // } else {
-        //   return false;
-        // }
-        var getDirectionUrl =
-          "https://www.google.com/maps/dir/?api=1&destination=" +
-          entitiy.yextDisplayCoordinate.latitude +
-          "," +
-          entitiy.yextDisplayCoordinate.longitude +
-          "&origin=" + origin;
-
-        window.open(getDirectionUrl, "_blank");
-      };
-      navigator.geolocation.getCurrentPosition(
-        function (position) {
-          let currentLatitude = position.coords.latitude;
-          let currentLongitude = position.coords.longitude;
-          let getDirectionUrl =
-            "https://www.google.com/maps/dir/?api=1&destination=" +
-            entitiy.yextDisplayCoordinate.latitude +
-            "," +
-            entitiy.yextDisplayCoordinate.longitude +
-            "&origin=" +
-            currentLatitude +
-            "," +
-            currentLongitude;
-          window.open(getDirectionUrl, "_blank");
-        },
-        error,
-        {
-          timeout: 10000,
-        }
-      );
-    }
-  }
 
   return (
     <>

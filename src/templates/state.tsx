@@ -7,7 +7,6 @@ import Footer from "../components/layouts/footer";
 // import favicon from "../images/vodafone-favicon.ico";
 import BreadCrumbs from "../components/layouts/BreadCrumbs";
 import { AnalyticsEnableTrackingCookie,  AnalyticsEnableDebugging} from "../types/constants";
-// import GetDirection from "../components/GetDirection";
 // import { stagingBaseUrl } from "../constants";
 //import bannerImage from "../images/app-bg.png";
 import {
