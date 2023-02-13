@@ -4,11 +4,11 @@ type data = {
   parents: any;
   baseUrl: any;
   address: any;
+  slug: any;
 };
 
 const BreadCrumbs = (props: data) => {
   const [list, setList] = React.useState(null);
-
   var breadcrumbs;
   var data: any = [];
   React.useEffect(() => {
@@ -41,7 +41,7 @@ const BreadCrumbs = (props: data) => {
 
       breadcrumbs = data.map((crumb: any) => (
         <li key={crumb.slug}>
-          <a href={baseUrl + crumb.slug + ".html"}>{crumb.name}</a>
+          <a href={baseUrl +  crumb.slug + ".html"}>{crumb.name}</a>
         </li>
       ));
       setList(breadcrumbs);
