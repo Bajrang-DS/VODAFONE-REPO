@@ -166,13 +166,13 @@ const DayRow = (props: DayRow) => {
       let f = new Intl.DateTimeFormat('en', m);
       return f.format(t);
     }
-    return a?.map(format).join(s);
+    return a.map(format).join(s);
   }
 
   const holidayarray: any[] = [];
   const holidayopenintervals: any[] = [];
   const keysFromData =
-    holidayhours ? holidayhours?.map((holiday: any, index: Number) => {
+    holidayhours ? holidayhours.map((holiday: any, index: Number) => {
       a = [{ day: 'numeric' }, { month: 'long' }, { year: 'numeric' }];
       s = join(new Date(holiday.date), a, ' ');
       holidayDate = s;
@@ -246,7 +246,7 @@ const DayRow = (props: DayRow) => {
           </span>
         </td>
       )}
-      {day.isClosed && ( 
+      {day.isClosed && (
         <td key={"td4"} className="pr-1">
           <span>Closed</span>
         </td>
@@ -266,7 +266,7 @@ const Hours = (props: Hours) => {
       let f = new Intl.DateTimeFormat('en', m);
       return f.format(t);
     }
-    return a?.map(format).join(s);
+    return a.map(format).join(s);
   }
   if (hours.reopenDate) {
     a = [{ day: 'numeric' }, { month: 'long' }, { year: 'numeric' }];

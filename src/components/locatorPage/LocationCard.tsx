@@ -49,8 +49,8 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
   return (
     <div className={`location result`} id={`result-${result.index}`}>
       <div className="relative  w-full">
-        <h2  className="onhighLight"><Link eventName="Name" href={`${url}`}><span style={{color:"red"}}>{result.rawData.name}</span></Link></h2>
-        <div className="miles "><span className="icon ">{svgIcons.locationmiles}</span> <span style={{color:"green"}}>{metersToMiles(result.distance ?? 0)} mi</span></div>
+        <h2 className="onhighLight"><Link eventName="Name" href={`${url}`}><span style={{ color: "red" }}>{result.rawData.name}</span></Link></h2>
+        <div className="miles "><span className="icon ">{svgIcons.locationmiles}</span> <span style={{ color: "green" }}>{metersToMiles(result.distance ?? 0)} mi</span></div>
       </div>
 
       {/* <p className="text-sm text-slate-700">{address.line1}</p>
@@ -64,7 +64,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
         {mainPhone ?
           <div className="icon-row store-phone"> <span className="icon">
             {svgIcons.locatorphoneicon}</span>
-            <p><a href={"tel:" + mainPhone}>{formattedPhone} </a></p>
+            <p className ="hover:text-blue"><a  href={"tel:" + mainPhone}><span  style={{color:"Violet"}}>{formattedPhone} </span></a></p>
           </div> : ""}
         <div className="open-close ">
           <div className="hours-sec onhighLight">
@@ -73,46 +73,46 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                 <span className="icon">{svgIcons.locationstatus}</span>
                 {/* <a className={timeStatus} href="javascript:void(0);" onClick={onOpenHide} >
                   <OpenClose timezone={timezone} hours={hours} deliveryHours={hours}></OpenClose></a> */}
-                 <div className="flex" onClick={onOpenHide}>
-                 <OpenClose
+                <div className="flex" onClick={onOpenHide}>
+                  <OpenClose
                     timezone={timezone}
                     hours={hours}
                     deliveryHours={hours}
                   ></OpenClose>
-                 <svg className="mt-2" xmlns="http://www.w3.org/2000/svg" width="9.585" height="4.793" viewBox="0 0 9.585 4.793">
-                  <path id="hrd-drop" d="M9,13.5l4.793,4.793L18.585,13.5Z" transform="translate(-9 -13.5)" fill="#00363f"></path>
-                 </svg>
-                 </div>
+                  <svg className="mt-2" xmlns="http://www.w3.org/2000/svg" width="9.585" height="4.793" viewBox="0 0 9.585 4.793">
+                    <path id="hrd-drop" d="M9,13.5l4.793,4.793L18.585,13.5Z" transform="translate(-9 -13.5)" fill="#00363f"></path>
+                  </svg>
+                </div>
 
               </div>
-              <div className={timeStatus + " daylist"} > 
+              <div style={{ width: "max-content" }} className={timeStatus + " daylist"} >
                 <Hours key={result.rawData.id} hours={hours} additionalHoursText={additionalHoursText} />
-                 </div>
+              </div>
             </div>
 
           </div>
         </div>
       </div>
-       {/* <Modal  ourservice={result.rawData.c_ourservice}/> */}
+      {/* <Modal  ourservice={result.rawData.c_ourservice}/> */}
       <div className="store-link">
-        
-      <Link
-            data-ya-track="getdirections"
-            eventName={`getdirections`}
-            className="direction button before-icon"
-            onClick={() => getDirectionUrl(result.rawData)}
-            href="javascript:void(0);"
-            id="some-button"
-            rel="noopener noreferrer"
-            //conversionDetails={conversionDetails_direction}
-          >
-            <> Directions </>
-          </Link>
-      
-        <Link className="consulation" eventName={"Store Detail"}  href={`${url}`}>
-        {svgIcons.storeview}
-         Store Detail
-       
+
+        <Link
+          data-ya-track="getdirections"
+          eventName={`getdirections`}
+          className="direction button before-icon"
+          onClick={() => getDirectionUrl(result.rawData)}
+          href="javascript:void(0);"
+          id="some-button"
+          rel="noopener noreferrer"
+        //conversionDetails={conversionDetails_direction}
+        >
+          <> Directions </>
+        </Link>
+
+        <Link className="consulation" eventName={"Store Detail"} href={`${url}`}>
+          {svgIcons.storeview}
+          Store Detail
+
         </Link>
         {/* :"view details"} */}
       </div>

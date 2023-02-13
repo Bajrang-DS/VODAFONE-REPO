@@ -394,7 +394,7 @@ const City: Template<TemplateRenderProps> = ({
               What3Words
             </a>
           </div> */}
-          {entity.mainPhone &&  <div className="store-phone">
+          {entity.mainPhone &&  <div className="store-phone m-0">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="23.987"
@@ -410,12 +410,12 @@ const City: Template<TemplateRenderProps> = ({
             </svg>
             <p>
               <Link className ="hover:text-blue" eventName={"PhoneNumber"} href={`tel:${entity.mainPhone}`} rel="noopener noreferrer">
-                {entity.mainPhone}
+              <span style={{color:"green"}}>  {entity.mainPhone}</span>
               </Link>
             </p>
           </div>}
          
-          <div className="store-link flex">
+          <div className="store-link flex pt-0">
           {/* <Link
             data-ya-track="getdirections"
             eventName={`getdirections`}
@@ -424,14 +424,14 @@ const City: Template<TemplateRenderProps> = ({
             href="javascript:void(0);"
             id="some-button"
             rel="noopener noreferrer"
-            //conversionDetails={conversionDetails_direction}
+            // conversionDetails={conversionDetails_direction}
           >
             <> Directions </>
           </Link> */}
             {/* <Link
               className="direction"
               onClick={() => {
-                getDirectionUrl(entity);
+                getDirectionUrl(result.rawData);
               }}
               href="javascript:void(0);"
               target="_blank"
@@ -477,18 +477,23 @@ const City: Template<TemplateRenderProps> = ({
         </div>
       </div>
       
+      
       {/* </AnalyticsScopeProvider>
       </AnalyticsProvider> */}
       </>
     );
-    function direction(){
-      getDirectionUrl(result.rawData)
-     }
+          
+    // function direction(){
+    //   getDirectionUrl(result.rawData)
+    //  }
 
     // google.maps.event.addListener(City.current, 'domready', (e: any) => {
     //   const someButton = document.getElementById("direct");
     //   someButton?.addEventListener("click", direction);
     //   });
+     
+    //  let string = renderToString(MarkerContent);
+    //  City.current.setContent(string);
   });
  
   c_globalData &&
