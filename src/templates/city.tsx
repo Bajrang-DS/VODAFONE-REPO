@@ -307,7 +307,7 @@ const City: Template<TemplateRenderProps> = ({
         <div className="near-location">
           <h4>
             <Link eventName={"Location detail"} key={entity.slug} href={`/${detailPageUrl}`}>
-              {entity.name}
+            <span style={{color:"OrangeRed"}}>  {entity.name}</span>
             </Link>
           </h4>
           <div className="store-address">
@@ -325,7 +325,7 @@ const City: Template<TemplateRenderProps> = ({
                 />
                 <path
                   d="M10.61,6.247a4.116,4.116,0,1,1-4.116,4.116A4.117,4.117,0,0,1,10.61,6.247Z"
-                  fill="#a60d0d"
+                  fill="yellow"
                   fillRule="evenodd"
                 />
               </g>
@@ -404,12 +404,12 @@ const City: Template<TemplateRenderProps> = ({
               <path
                 d="M19.64,17.328c-.617,1.876-3.036,2.812-4.764,2.656A15.194,15.194,0,0,1,8,17.14,22.652,22.652,0,0,1,.885,8.652C-.22,6.3-.468,3.411,1.176,1.268A2.827,2.827,0,0,1,3.429,0C4.8-.063,4.992.721,5.463,1.943c.351.913.819,1.845,1.08,2.792C7.032,6.5,5.321,6.575,5.105,8.019c-.133.911.969,2.132,1.468,2.781A13.473,13.473,0,0,0,10.051,14c.76.479,1.984,1.341,2.853.865,1.339-.733,1.213-2.991,3.084-2.227a30.12,30.12,0,0,1,2.833,1.463c1.431.769,1.364,1.567.819,3.223h0"
                 transform="translate(4.5) rotate(13)"
-                fill="#d61a0c"
+                fill="blue"
                 fillRule="evenodd"
               />
             </svg>
             <p>
-              <Link eventName={"PhoneNumber"} href={`tel:${entity.mainPhone}`} rel="noopener noreferrer">
+              <Link className ="hover:text-blue" eventName={"PhoneNumber"} href={`tel:${entity.mainPhone}`} rel="noopener noreferrer">
                 {entity.mainPhone}
               </Link>
             </p>
@@ -462,12 +462,12 @@ const City: Template<TemplateRenderProps> = ({
                   <path
                     d="M27.176,120a10.337,10.337,0,0,1-4.387-1.05,16.655,16.655,0,0,1-3.481-2.249,21.287,21.287,0,0,1-3.183-3.253.742.742,0,0,1,0-.9,21.288,21.288,0,0,1,3.183-3.253,16.655,16.655,0,0,1,3.481-2.249A10.337,10.337,0,0,1,27.176,106a10.337,10.337,0,0,1,4.387,1.05,16.655,16.655,0,0,1,3.481,2.249,21.023,21.023,0,0,1,3.183,3.253.742.742,0,0,1,0,.9,21.287,21.287,0,0,1-3.183,3.253,16.655,16.655,0,0,1-3.481,2.249A10.337,10.337,0,0,1,27.176,120Zm-9.492-7c1.171,1.386,5.04,5.507,9.492,5.507S35.5,114.386,36.669,113c-1.171-1.386-5.04-5.507-9.492-5.507S18.856,111.614,17.684,113Z"
                     transform="translate(0 0)"
-                    fill="#fff"
+                    fill="green"
                   />
                   <path
                     d="M187.36,190.72a3.36,3.36,0,1,1,3.36-3.36A3.364,3.364,0,0,1,187.36,190.72Zm0-5.227a1.867,1.867,0,1,0,1.867,1.867A1.866,1.866,0,0,0,187.36,185.493Z"
                     transform="translate(-160.184 -74.36)"
-                    fill="#fff"
+                    fill="blue"
                   />
                 </g>
               </svg>{" "}
@@ -485,10 +485,10 @@ const City: Template<TemplateRenderProps> = ({
       getDirectionUrl(result.rawData)
      }
 
-    google.maps.event.addListener(City.current, 'domready', (e: any) => {
-      const someButton = document.getElementById("direct");
-      someButton?.addEventListener("click", direction);
-      });
+    // google.maps.event.addListener(City.current, 'domready', (e: any) => {
+    //   const someButton = document.getElementById("direct");
+    //   someButton?.addEventListener("click", direction);
+    //   });
   });
  
   c_globalData &&
@@ -594,7 +594,7 @@ const City: Template<TemplateRenderProps> = ({
         text={name ? name : ""}
         template={"city"}
       /> */}
-      <h1 className="sec_heading mt-12" style={{ textAlign: "center" }}>
+      <h1 className="sec_heading mt-12" style={{ textAlign: "center", color:"Highlight" }}>
         Available Stores in {name}, {document.dm_directoryParents[2].name},{" "}
         {document.dm_directoryParents[1].name}{" "}
       </h1>
