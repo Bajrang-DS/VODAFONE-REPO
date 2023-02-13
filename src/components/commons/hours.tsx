@@ -97,7 +97,7 @@ const renderHours = (week: Week) => {
         let f = new Intl.DateTimeFormat('en', m);
         return f.format(t);
       }
-      return a.map(format).join(s);
+      return a?.map(format).join(s);
     }
     function formatDate(date: any) {
       var d = new Date(date),
@@ -120,10 +120,10 @@ const renderHours = (week: Week) => {
     s = join(dayDate, a, ' ');
     dayDate = s;
 
-    // week.holidayHours.map((res:any)=>{
-    //   if(res.date==formatDate(dayDate)){
-    //   }
-    // })
+    week.holidayHours?.map((res:any)=>{
+      if(res.date==formatDate(dayDate)){
+      }
+    })
     dayDom.push(<DayRow key={k} dayDate={dayDate} dayName={k} day={v} isToday={isDayToday(k)} holidayhours={week.holidayHours} />);
     i++;
   }
@@ -166,13 +166,13 @@ const DayRow = (props: DayRow) => {
       let f = new Intl.DateTimeFormat('en', m);
       return f.format(t);
     }
-    return a.map(format).join(s);
+    return a?.map(format).join(s);
   }
 
   const holidayarray: any[] = [];
   const holidayopenintervals: any[] = [];
   const keysFromData =
-    holidayhours ? holidayhours.map((holiday: any, index: Number) => {
+    holidayhours ? holidayhours?.map((holiday: any, index: Number) => {
       a = [{ day: 'numeric' }, { month: 'long' }, { year: 'numeric' }];
       s = join(new Date(holiday.date), a, ' ');
       holidayDate = s;
@@ -211,7 +211,7 @@ const DayRow = (props: DayRow) => {
   }
   return (
 
-    <tr className={isToday ? "bg-[#eb0000]" : ""}>
+    <tr className={isToday ? "bg-[#00a8eb]" : ""}>
       {Status ?
         <td key={"td1"} className="capitalize text-left  pl-1 pr-4">
           <span >{dayName} (Holiday Hours)</span>
@@ -224,9 +224,9 @@ const DayRow = (props: DayRow) => {
         <td key={"td3"} className=" mr-2">
           <span key={"spana"} className="inline">
             {Status ?
-              holidayopenintervals.map((res: any) => {
-                return (res.map((openint: any) => {
-                  return (openint.openIntervals.map((res: any, index:any) => {
+              holidayopenintervals?.map((res: any) => {
+                return (res?.map((openint: any) => {
+                  return (openint.openIntervals?.map((res: any, index:any) => {
                     return (
                       <>
                         <span key={index} className="mr-2 text-[#000]">{res.start}</span> -<span className="ml-2 text-[#000]">{res.end}</span>
@@ -235,7 +235,7 @@ const DayRow = (props: DayRow) => {
                   }))
                 }))
               })
-              : day.openIntervals.map((res: any, index: any) => {
+              : day.openIntervals?.map((res: any, index: any) => {
                 return (
                   <>
                     <span key={index} className="mr-2">{res.start}</span> -<span className="ml-2 ">{res.end}</span>
@@ -246,7 +246,7 @@ const DayRow = (props: DayRow) => {
           </span>
         </td>
       )}
-      {day.isClosed && (
+      {day.isClosed && ( 
         <td key={"td4"} className="pr-1">
           <span>Closed</span>
         </td>
@@ -266,7 +266,7 @@ const Hours = (props: Hours) => {
       let f = new Intl.DateTimeFormat('en', m);
       return f.format(t);
     }
-    return a.map(format).join(s);
+    return a?.map(format).join(s);
   }
   if (hours.reopenDate) {
     a = [{ day: 'numeric' }, { month: 'long' }, { year: 'numeric' }];

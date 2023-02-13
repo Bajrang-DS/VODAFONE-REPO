@@ -52,6 +52,7 @@ const Faq = (faqData: Faq) => {
 
           <div className="faq-blocks">
             <div className="left-faq">
+              <div className="container">
               {faq_Data.map((i: any, index: any) => {
                   return (
                     <div
@@ -72,7 +73,9 @@ const Faq = (faqData: Faq) => {
 
                       <>
                         <div className="faq-content">
+                          <div className="container">
                           <p>{i.c_ans2}</p>
+                        </div>
                         </div>
                       </>
                     </div>
@@ -81,7 +84,7 @@ const Faq = (faqData: Faq) => {
                    })}
                  </div>
                  {faqData.c_faqs && faqData.c_faqs &&<div className="mt-12 px-96 mx-16"><Link href={faqData.c_faqs} eventName={faqData.c_faqs} className="bg-[#FF0000] p-2 text-white">{faqData.c_faqs}</Link></div>}
-                 
+                 </div>
           </div>
         </div>
       </div>

@@ -50,9 +50,10 @@ const Service = (props: services) => {
 
   return (
     <>
-      <div className="bg-gray-100 w-full mb-2">
+      <div className="bg-gray-100 w-full mb-2 pr-8 pl-8">
+       
 
-        <div className=" services-list ">
+        <div className=" services-list  ">
 
           {data.map((i: any) => {
             return (
@@ -68,9 +69,9 @@ const Service = (props: services) => {
           })
 
           }
-      
-        </div>
       </div>
+        </div>
+      
      
     </>
   );
