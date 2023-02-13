@@ -727,8 +727,8 @@ const Location: Template<ExternalApiRenderData> = ({
           c_heading="heading"
           c_ctabutton="button"
           timezone={timezone}
-          additionalHoursText={additionalHoursText}
-          hours={hours}
+           additionalHoursText={additionalHoursText}
+           hours={hours}
         />
         <About  c_aboutSection={c_aboutSection} ></About>
         <OfferSection offer={photoGallery}/>

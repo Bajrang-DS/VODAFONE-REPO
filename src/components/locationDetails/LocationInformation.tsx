@@ -222,7 +222,7 @@ today = yyyy + '-' + mm + '-' + dd;
                     {data.hours && data.hours.holidayHours ? (
                       <>
                       {/* <h2 className="text-[1.375rem] ">STORE HOURS</h2> */}
-                      {data.hours.holidayHours[0].date >= today ? <button className="current-location underline hide-mob font-bold " onClick={openModal} > Holiday Hours </button>  :console.log("check3 ")}
+                      {/* {data.hours.holidayHours[0].date >= today ? <button className="current-location underline hide-mob font-bold " onClick={openModal} > Holiday Hours </button>  :console.log("check3 ")} */}
                        
             
                       <Modal
